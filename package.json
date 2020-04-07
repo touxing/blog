@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "vuepress build docs",
+    "docs:build": "npm run build"
   },
   "devDependencies": {
     "vuepress": "^1.4.0"
