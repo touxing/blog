@@ -50,8 +50,5 @@ themeConfig:
           children:
             - [/zh/tools/efficient, 效率工具]
             - [/zh/tools/site, 有趣的网站]
-
-        # /zh/css/: [one, two]
-        # /zh/html/: [one, two]
       displayAllHeaders: true # 显示所有页面的标题链接
       lastUpdated: "Last Updated" # string | boolean
