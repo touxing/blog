@@ -1,4 +1,0 @@
----
-sidebar: auto
----
-# html5
