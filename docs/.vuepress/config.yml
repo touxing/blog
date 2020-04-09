@@ -2,13 +2,13 @@ base: /blog/
 title: 十年磨一剑
 head:
   - link
-  - { rel: icon, href: "/logo-64.png" }
+  - { rel: icon, href: "/assets/img/logo-64.png" }
 description: "JavaScript学习地，前端进阶之路"
 # webpack config
 configureWebpack:
   resolve:
     alias:
-      "@img": /assets/img
+      "@alias": /assets/img
 
 locales:
   # 键名是该语言所属的子路径
