@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+        content="ie=edge">
+  <title>链模式return this</title>
+  <style>
+    .data-item {
+      background-color: yellowgreen;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- <ul id="data-list">
+    <li class="data-item">item 1</li>
+    <li class="data-item">item 2</li>
+    <li class="data-item">item 3</li>
+  </ul> -->
+  <script>
+    // 不用模式新增节点
+    const ul = document.createElement('ul');
+    ul.setAttribute('id', 'data-list');
+    const li1 = document.createElement('li');
+    const li2 = document.createElement('li');
+    const li3 = document.createElement('li');
+    li1.setAttribute('class', 'data-item');
+    li2.setAttribute('class', 'data-item');
+    li3.setAttribute('class', 'data-item');
+
+    const text1 = document.createTextNode('item 1');
+    const text2 = document.createTextNode('item 2');
+    const text3 = document.createTextNode('item 3');
+
+    li1.appendChild(text1);
+    li2.appendChild(text2);
+    li3.appendChild(text3);
+    ul.appendChild(li1);
+    ul.appendChild(li2);
+    ul.appendChild(li3);
+    document.body.appendChild(ul);
+    const hr = document.createElement('hr');
+    document.body.appendChild(hr)
+    // 链模式
+    function createElement(tag, context) {
+      return tag === 'text'
+        ? document.createTextNode(context)
+        : document.createElement(tag);
+    }
+
+    HTMLElement.prototype._setAttribute = function (key, value) {
+      this.setAttribute(key, value)
+      return this
+    }
+    HTMLElement.prototype._appendChild = function (child) {
+      this.appendChild(child)
+      return this
+    }
+
+    let ul2 = createElement('ul')
+      ._setAttribute('id', 'ul-list')
+      ._appendChild(
+        createElement('li')
+          ._setAttribute('class', 'data-item')
+          ._appendChild(createElement('text', 'chain item 1'))
+          ._appendChild(
+            createElement('li')
+            ._setAttribute('class', 'data-item')
+            ._appendChild(createElement('text', 'chain item 2'))
+          )
+          ._appendChild(
+            createElement('li')
+            ._setAttribute('class', 'data-item')
+            ._setAttribute('id', 'item2-2')
+            ._appendChild(createElement('text', 'chain item 3 #id=item2-2'))
+          )
+      );
+
+    document.body.appendChild(ul2);
+    ;
+  </script>
+</body>
+
+</html>
