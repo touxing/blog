@@ -53,6 +53,7 @@ themeConfig:
                - {text: 'HTML', link: /zh/html/}
                - {text: 'CSS', link: /zh/css/}
                - {text: 'JavaScript', link: /zh/javascript/}
+               - {text: 'Git', link: /zh/git/}
                - {text: '工具利器', link: /zh/tools/}
             - { text: '后端', link: '/zh/backend/' }
         - { text: 外部, link: https://google.com, target: _blank, rel: "" }

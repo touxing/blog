@@ -2,7 +2,7 @@
  * @Author: HotSuitor
  * @Date: 2020-03-20 15:26:28
  * @LastEditors: hs
- * @LastEditTime: 2020-03-20 17:49:25
+ * @LastEditTime: 2020-04-09 16:16:01
  * @Description: hotsuitor@qq.com
  */
 function quickSort(arr, low, high) {
@@ -51,10 +51,9 @@ let arr1 = [3, 2, 6, 5, 1, 9, 4];
 //   `排序前数据：${arr1}\n排序后收据：${quickSort(arr1, 0, arr1.length - 1)}`
 // );
 
-let arr2 = Array.from({ length: 100 }, item =>
+let arr2 = Array.from({ length: 1000 }, item =>
   Math.floor(Math.random() * Math.floor(100) + 1)
 );
-console.log(arr2);
 console.time("timer");
 console.log(quickSort(arr2, 0, arr2.length - 1));
 console.timeEnd("timer");
