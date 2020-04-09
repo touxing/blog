@@ -1,4 +1,6 @@
-[[toc]]
+---
+sidebar: auto
+---
 
 # git 基础教程
 
