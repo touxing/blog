@@ -9,6 +9,7 @@ configureWebpack:
   resolve:
     alias:
       "@alias": /assets/img
+      "@sort": ./docs/zh/javascript/11排序
 
 locales:
   # 键名是该语言所属的子路径
@@ -43,6 +44,17 @@ themeConfig:
       nav:
         - { text: 主页, link: /zh/ }
         - { text: 指南, link: /zh/guide/, target: _self }
+        -
+          text: 'Note'
+          ariaLabel: 'Note Menu'
+          items:
+            - text: '前端'
+              items:
+               - {text: 'HTML', link: /zh/html/}
+               - {text: 'CSS', link: /zh/css/}
+               - {text: 'JavaScript', link: /zh/javascript/}
+               - {text: '工具利器', link: /zh/tools/}
+            - { text: '后端', link: '/zh/backend/' }
         - { text: 外部, link: https://google.com, target: _blank, rel: "" }
       sidebar:
         - /zh/
@@ -59,3 +71,7 @@ themeConfig:
       displayAllHeaders: true # 显示所有页面的标题链接
       lastUpdated: "Last Updated" # string | boolean
   smoothScroll: true # 页面滚动效果
+
+# 显示行号
+markdown:
+  lineNumbers: true

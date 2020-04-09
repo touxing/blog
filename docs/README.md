@@ -1,6 +1,6 @@
 ---
 home: true
-# heroImage: /hero.png
+heroImage: /assets/img/logo-64.png
 heroText: 总想写点什么
 tagline: 不管好与不好
 actionText: 开始食用 →
