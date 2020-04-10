@@ -99,6 +99,7 @@ git tag -a tag_name -m "附注信息"
 
 ```bash
 git tag v1.3
+# git tag v1.2 20e1e412 # 指定打摸个commit的tag
 ```
 
 
@@ -162,3 +163,15 @@ develop分支中就有了最新的 `tools.js` `function3.js` 文件了
 ```bash
 git checkout 3f6fe4ef function3.js
 ```
+
+
+
+### describe
+
+`git describe <ref>`
+
+由于标签在代码库中起着“锚点”的作用，Git 还为此专门设计了一个命令用来**描述**离你最近的锚点（也就是标签），它就是 `git describe`！
+
+Git Describe 能帮你在提交历史中移动了多次以后找到方向；当你用 `git bisect`（一个查找产生 Bug 的提交记录的指令）找到某个提交记录时，或者是当你坐在你那刚刚度假回来的同事的电脑前时， 可能会用到这个命令。
+
+当 `ref` 提交记录上有某个标签时，则只输出标签名称
