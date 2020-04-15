@@ -55,6 +55,8 @@ themeConfig:
                - {text: 'JavaScript', link: /zh/javascript/}
                - {text: 'Git', link: /zh/git/}
                - {text: '工具利器', link: /zh/tools/}
+               - {text: '设计模式', link: /zh/javascript/#设计模式}
+               - {text: '算法', link: /zh/javascript/#算法}
             - { text: '后端', link: '/zh/backend/' }
         - { text: 外部, link: https://google.com, target: _blank, rel: "" }
       sidebar:
@@ -69,6 +71,7 @@ themeConfig:
           children:
             - [/zh/tools/efficient, 效率工具]
             - [/zh/tools/site, 有趣的网站]
+            - [/zh/tools/nginx, Nginx]
       displayAllHeaders: true # 显示所有页面的标题链接
       lastUpdated: "Last Updated" # string | boolean
   smoothScroll: true # 页面滚动效果
