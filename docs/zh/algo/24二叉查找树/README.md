@@ -4,4 +4,4 @@
  要求在树中的任意一个节点，其左子树中的每个节点的值，都要小于这个节点的值，
  而右子树节点的值都大于这个节点的值
 
-<<< ./docs/zh/javascript/24二叉查找树/binarySearchTree.js
+<<< ./docs/zh/algo/24二叉查找树/binarySearchTree.js

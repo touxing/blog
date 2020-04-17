@@ -4,4 +4,4 @@
 
 > 二分法查找与变体的二分法查找
 
-<<< ./docs/zh/javascript/16二分法查找/binarySearch.js
+<<< ./docs/zh/algo/16二分法查找/binarySearch.js

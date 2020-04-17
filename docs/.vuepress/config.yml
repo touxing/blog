@@ -56,7 +56,7 @@ themeConfig:
                - {text: 'Git', link: /zh/git/}
                - {text: '工具利器', link: /zh/tools/}
                - {text: '设计模式', link: /zh/javascript/#设计模式}
-               - {text: '算法', link: /zh/javascript/#算法}
+               - {text: '算法', link: /zh/algo/}
             - { text: '后端', link: '/zh/backend/' }
         - { text: 外部, link: https://google.com, target: _blank, rel: "" }
       sidebar:
@@ -64,6 +64,7 @@ themeConfig:
         - [/zh/html/, HTML]
         - [/zh/css/, CSS]
         - [/zh/javascript/, JavaScript]
+        - [/zh/algo/, 算法]
         - title: 工具利器 # 必要的
           path: /zh/tools/ # 可选的, 应该是一个绝对路径
           # collapsable: false # 可选的, 默认值是 true,
