@@ -4,13 +4,9 @@ head:
   - link
   - { rel: icon, href: "/assets/img/logo-64.png" }
 description: "JavaScript学习地，前端进阶之路"
-# webpack config
-configureWebpack:
-  resolve:
-    alias:
-      "@alias": /assets/img
-      "@sort": ./docs/zh/javascript/11排序
 
+plugins:
+  - '@vuepress/back-to-top'
 locales:
   # 键名是该语言所属的子路径
   # 作为特例，默认语言可以使用 '/' 作为其路径。
