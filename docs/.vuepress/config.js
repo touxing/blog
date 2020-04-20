@@ -66,6 +66,7 @@ module.exports = {
               ['/zh/tools/nginx', 'Nginx'],
             ],
           },
+          ['/zh/english/', '英语'],
         ],
         displayAllHeaders: true,
         lastUpdated: 'Last Updated',
@@ -76,7 +77,6 @@ module.exports = {
   markdown: { lineNumbers: true },
   plugins: ['@vuepress/back-to-top'],
   chainWebpack: (config, isServer) => {
-    config.resolve.alias
-      .set('@img', '/assets/img')
-  }
+    config.resolve.alias.set('@img', '/assets/img')
+  },
 }
