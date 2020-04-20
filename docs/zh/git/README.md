@@ -3,6 +3,7 @@ sidebar: auto
 ---
 
 # git 基础教程
+> [git 奇淫技巧](https://github.com/521xueweihan/git-tips)
 
 ---
 缓存

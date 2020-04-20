@@ -69,5 +69,15 @@ sidebarDepth: 3
 ## [算法](../algo/)
 > 算法是内功，唯有内功深厚，才能称霸“江湖” 实力派
 
+> 参考：[javascript算法](https://github.com/trekhleb/javascript-algorithms)
 
 ## 阅读源码
+
+## 微服务
+
+[single-spa](https://single-spa.js.org/) 一款微服务框架
+
+
+## 书籍推荐
+
+[《You Don't know JS》](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/README.md)
