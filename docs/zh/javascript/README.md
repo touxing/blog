@@ -73,6 +73,11 @@ sidebarDepth: 3
 
 ## 阅读源码
 
+### [理解vue原理](../readvue/)
+
+简化版vue，学习原理
+[练习仓库](https://gitee.com/hotsuitor/understand_vue)
+
 ## 微服务
 
 [single-spa](https://single-spa.js.org/) 一款微服务框架

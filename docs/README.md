@@ -16,7 +16,7 @@ footer: MIT Licensed | Copyright © 2020-present 舒馨博客
 sidebar: auto
 meta:
   - name: description
-    content: 前端|记录生活点滴，书写人生轨迹|不出众便出局
+    content: 前端|记录生活点滴，书写人生轨迹|不出众便出局|凡事预则立，不预则废
   - name: keyword
     content: html css javascript
 ---
