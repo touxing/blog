@@ -17,7 +17,7 @@ module.exports = {
         nav: [
           { text: 'Home', link: '/' },
           { text: 'Guide', link: '/guide/', target: '_self' },
-          { text: 'External', link: 'https://google.com', target: '_blank', rel: '' },
+          { text: 'Google', link: 'https://google.com', target: '_blank', rel: '' },
         ],
       },
       '/zh/': {
@@ -49,7 +49,7 @@ module.exports = {
               { text: '后端', link: '/zh/backend/' },
             ],
           },
-          { text: 'google', link: 'https://google.com', target: '_blank', rel: '' },
+          { text: 'Google', link: 'https://google.com', target: '_blank', rel: '' },
         ],
         sidebar: [
           '/zh/',
