@@ -1,0 +1,976 @@
+<!DOCTYPE html
+          PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>上班~=开会？</title>
+  <meta http-equiv="Content-Type"
+        content="text/html; charset=UTF-8" />
+  <style>
+    html {
+      color: #333;
+      -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+      text-rendering: optimizelegibility;
+      font-family: Helvetica Neue, PingFang SC, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif
+    }
+
+    html.borderbox *,
+    html.borderbox :after,
+    html.borderbox :before {
+      box-sizing: border-box
+    }
+
+    article,
+    aside,
+    blockquote,
+    body,
+    button,
+    code,
+    dd,
+    details,
+    dl,
+    dt,
+    fieldset,
+    figcaption,
+    figure,
+    footer,
+    form,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    header,
+    hr,
+    input,
+    legend,
+    li,
+    menu,
+    nav,
+    ol,
+    p,
+    pre,
+    section,
+    td,
+    textarea,
+    th,
+    ul {
+      margin: 0;
+      padding: 0
+    }
+
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    menu,
+    nav,
+    section {
+      display: block
+    }
+
+    audio,
+    canvas,
+    video {
+      display: inline-block
+    }
+
+    body,
+    button,
+    input,
+    select,
+    textarea {
+      font: 300 1em/1.8 PingFang SC, Lantinghei SC, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, Helvetica, sans-serif
+    }
+
+    button::-moz-focus-inner,
+    input::-moz-focus-inner {
+      padding: 0;
+      border: 0
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 0
+    }
+
+    fieldset,
+    img {
+      border: 0
+    }
+
+    blockquote {
+      position: relative;
+      color: #999;
+      font-weight: 400;
+      border-left: 1px solid #1abc9c;
+      padding-left: 1em;
+      margin: 1em 3em 1em 2em
+    }
+
+    @media only screen and (max-width: 640px) {
+      blockquote {
+        margin: 1em 0
+      }
+    }
+
+    abbr,
+    acronym {
+      border-bottom: 1px dotted;
+      font-variant: normal
+    }
+
+    abbr {
+      cursor: help
+    }
+
+    del {
+      text-decoration: line-through
+    }
+
+    address,
+    caption,
+    cite,
+    code,
+    dfn,
+    em,
+    th,
+    var {
+      font-style: normal;
+      font-weight: 400
+    }
+
+    ol,
+    ul {
+      list-style: none
+    }
+
+    caption,
+    th {
+      text-align: left
+    }
+
+    q:after,
+    q:before {
+      content: ""
+    }
+
+    sub,
+    sup {
+      font-size: 75%;
+      line-height: 0;
+      position: relative
+    }
+
+    :root sub,
+    :root sup {
+      vertical-align: baseline
+    }
+
+    sup {
+      top: -.5em
+    }
+
+    sub {
+      bottom: -.25em
+    }
+
+    a {
+      color: #1abc9c
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    .typo a {
+      border-bottom: 1px solid #1abc9c
+    }
+
+    .typo a:hover {
+      border-bottom-color: #555;
+      color: #555
+    }
+
+    .typo a:hover,
+    a,
+    ins {
+      text-decoration: none
+    }
+
+    .typo-u,
+    u {
+      text-decoration: underline
+    }
+
+    mark {
+      background: #fffdd1;
+      border-bottom: 1px solid #ffedce;
+      padding: 2px;
+      margin: 0 5px
+    }
+
+    code,
+    pre,
+    pre tt {
+      font-family: Courier, Courier New, monospace
+    }
+
+    pre {
+      background: hsla(0, 0%, 97%, .7);
+      border: 1px solid #ddd;
+      padding: 1em 1.5em;
+      display: block;
+      -webkit-overflow-scrolling: touch
+    }
+
+    hr {
+      border: none;
+      border-bottom: 1px solid #cfcfcf;
+      margin-bottom: .8em;
+      height: 10px
+    }
+
+    .typo-small,
+    figcaption,
+    small {
+      font-size: .9em;
+      color: #888
+    }
+
+    b,
+    strong {
+      font-weight: 700;
+      color: #000
+    }
+
+    [draggable] {
+      cursor: move
+    }
+
+    .clearfix:after,
+    .clearfix:before {
+      content: "";
+      display: table
+    }
+
+    .clearfix:after {
+      clear: both
+    }
+
+    .clearfix {
+      zoom: 1
+    }
+
+    .textwrap,
+    .textwrap td,
+    .textwrap th {
+      word-wrap: break-word;
+      word-break: break-all
+    }
+
+    .textwrap-table {
+      table-layout: fixed
+    }
+
+    .serif {
+      font-family: Palatino, Optima, Georgia, serif
+    }
+
+    .typo-dl,
+    .typo-form,
+    .typo-hr,
+    .typo-ol,
+    .typo-p,
+    .typo-pre,
+    .typo-table,
+    .typo-ul,
+    .typo dl,
+    .typo form,
+    .typo hr,
+    .typo ol,
+    .typo p,
+    .typo pre,
+    .typo table,
+    .typo ul,
+    blockquote {
+      margin-bottom: 1rem
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: PingFang SC, Helvetica Neue, Verdana, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
+      color: #000;
+      line-height: 1.35
+    }
+
+    .typo-h1,
+    .typo-h2,
+    .typo-h3,
+    .typo-h4,
+    .typo-h5,
+    .typo-h6,
+    .typo h1,
+    .typo h2,
+    .typo h3,
+    .typo h4,
+    .typo h5,
+    .typo h6 {
+      margin-top: 1.2em;
+      margin-bottom: .6em;
+      line-height: 1.35
+    }
+
+    .typo-h1,
+    .typo h1 {
+      font-size: 2em
+    }
+
+    .typo-h2,
+    .typo h2 {
+      font-size: 1.8em
+    }
+
+    .typo-h3,
+    .typo h3 {
+      font-size: 1.6em
+    }
+
+    .typo-h4,
+    .typo h4 {
+      font-size: 1.4em
+    }
+
+    .typo-h5,
+    .typo-h6,
+    .typo h5,
+    .typo h6 {
+      font-size: 1.2em
+    }
+
+    .typo-ul,
+    .typo ul {
+      margin-left: 1.3em;
+      list-style: disc
+    }
+
+    .typo-ol,
+    .typo ol {
+      list-style: decimal;
+      margin-left: 1.9em
+    }
+
+    .typo-ol ol,
+    .typo-ol ul,
+    .typo-ul ol,
+    .typo-ul ul,
+    .typo li ol,
+    .typo li ul {
+      margin-bottom: .8em;
+      margin-left: 2em
+    }
+
+    .typo-ol ul,
+    .typo-ul ul,
+    .typo li ul {
+      list-style: circle
+    }
+
+    .typo-table td,
+    .typo-table th,
+    .typo table caption,
+    .typo table td,
+    .typo table th {
+      border: 1px solid #ddd;
+      padding: .5em 1em;
+      color: #666
+    }
+
+    .typo-table th,
+    .typo table th {
+      background: #fbfbfb
+    }
+
+    .typo-table thead th,
+    .typo table thead th {
+      background: hsla(0, 0%, 95%, .7)
+    }
+
+    .typo table caption {
+      border-bottom: none
+    }
+
+    .typo-input,
+    .typo-textarea {
+      -webkit-appearance: none;
+      border-radius: 0
+    }
+
+    .typo-em,
+    .typo em,
+    caption,
+    legend {
+      color: #000;
+      font-weight: inherit
+    }
+
+    .typo-em {
+      position: relative
+    }
+
+    .typo-em:after {
+      position: absolute;
+      top: .65em;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      content: "\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB\30FB"
+    }
+
+    .typo img {
+      max-width: 100%
+    }
+
+    .common-content {
+      font-weight: 400;
+      color: #353535;
+      line-height: 1.75rem;
+      white-space: normal;
+      word-break: normal;
+      font-size: 1rem
+    }
+
+    .common-content img {
+      display: block;
+      max-width: 100%;
+      background-color: #eee
+    }
+
+    .common-content audio,
+    .common-content video {
+      width: 100%;
+      background-color: #eee
+    }
+
+    .common-content center,
+    .common-content font {
+      margin-top: 1rem;
+      display: inline-block
+    }
+
+    .common-content center {
+      width: 100%
+    }
+
+    .common-content pre {
+      margin-top: 1rem;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative;
+      overflow: hidden
+    }
+
+    .common-content pre code {
+      font-size: .8rem;
+      font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      overflow-x: auto
+    }
+
+    .common-content hr {
+      border: none;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-top: 1px solid #f5f5f5;
+      height: 1px;
+      background: none
+    }
+
+    .common-content b,
+    .common-content h1,
+    .common-content h2,
+    .common-content h3,
+    .common-content h4,
+    .common-content h5,
+    .common-content strong {
+      font-weight: 700
+    }
+
+    .common-content h1,
+    .common-content h2 {
+      font-size: 1.125rem;
+      margin-bottom: .45rem
+    }
+
+    .common-content h3,
+    .common-content h4,
+    .common-content h5 {
+      font-size: 1rem;
+      margin-bottom: .45rem
+    }
+
+    .common-content p {
+      font-weight: 400;
+      color: #353535;
+      margin-top: .15rem
+    }
+
+    .common-content .orange {
+      color: #ff5a05
+    }
+
+    .common-content .reference {
+      font-size: 1rem;
+      color: #888
+    }
+
+    .custom-rich-content h1 {
+      margin-top: 0;
+      font-weight: 400;
+      font-size: 15.25px;
+      border-bottom: 1px solid #eee;
+      line-height: 2.8
+    }
+
+    .custom-rich-content li,
+    .custom-rich-content p {
+      font-size: 14px;
+      color: #888;
+      line-height: 1.6
+    }
+
+    table.hljs-ln {
+      margin-bottom: 0;
+      border-spacing: 0;
+      border-collapse: collapse
+    }
+
+    table.hljs-ln,
+    table.hljs-ln tbody,
+    table.hljs-ln td,
+    table.hljs-ln tr {
+      box-sizing: border-box
+    }
+
+    table.hljs-ln td {
+      padding: 0;
+      border: 0
+    }
+
+    table.hljs-ln td.hljs-ln-numbers {
+      min-width: 15px;
+      color: rgba(27, 31, 35, .3);
+      text-align: right;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none
+    }
+
+    table.hljs-ln td.hljs-ln-code,
+    table.hljs-ln td.hljs-ln-numbers {
+      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+      font-size: 12px;
+      line-height: 20px;
+      vertical-align: top
+    }
+
+    table.hljs-ln td.hljs-ln-code {
+      position: relative;
+      padding-right: 10px;
+      padding-left: 10px;
+      overflow: visible;
+      color: #24292e;
+      word-wrap: normal;
+      white-space: pre
+    }
+
+    video::-webkit-media-controls {
+      overflow: hidden !important
+    }
+
+    video::-webkit-media-controls-enclosure {
+      width: calc(100% + 32px);
+      margin-left: auto
+    }
+
+    ._29HP61GA_0 {
+      max-width: 800px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      font-weight: 400;
+      color: #353535;
+      line-height: 1.76;
+      white-space: normal;
+      word-break: normal;
+      font-size: 17px;
+      -webkit-transition: background-color .3s ease;
+      transition: background-color .3s ease
+    }
+
+    ._29HP61GA_0 .MathJax_Display {
+      overflow: auto
+    }
+
+    ._29HP61GA_0 .poster {
+      position: fixed;
+      left: -10000px;
+      top: -10000px;
+      overflow: hidden;
+      padding: 1rem;
+      background: #ececec
+    }
+
+    ._29HP61GA_0 .richcontent-pre-copy {
+      font-size: 13px;
+      color: #888;
+      position: absolute;
+      right: 1em;
+      top: .5em;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    ._29HP61GA_0 .richcontent-pre-copy .iconfont {
+      font-size: 12px;
+      margin-right: .2em
+    }
+
+    ._29HP61GA_0 a {
+      color: #fa8919;
+      border-bottom: 1px solid #fa8919
+    }
+
+    ._29HP61GA_0 img {
+      display: block;
+      max-width: 100%;
+      position: relative;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      background-color: #eee;
+      vertical-align: top;
+      border-radius: 0
+    }
+
+    ._29HP61GA_0 audio,
+    ._29HP61GA_0 video {
+      width: 100%;
+      background-color: #eee
+    }
+
+    ._29HP61GA_0 pre {
+      margin-top: 16px;
+      padding: 34px 0 0;
+      margin-bottom: 30px;
+      position: relative;
+      border-radius: 6px;
+      background: rgba(246, 247, 251, .749);
+      border: 0
+    }
+
+    ._29HP61GA_0 pre code {
+      font-size: 12px;
+      font-family: Consolas, Liberation Mono, Menlo, monospace, Courier;
+      display: block;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      margin-left: 16px;
+      margin-right: 16px;
+      overflow-x: scroll
+    }
+
+    ._29HP61GA_0 pre code:after {
+      content: "";
+      height: 30px;
+      width: 100%;
+      display: block
+    }
+
+    ._29HP61GA_0 hr {
+      border: none;
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-top: 1px solid #f5f5f5;
+      height: 1px;
+      background: none
+    }
+
+    ._29HP61GA_0 h1,
+    ._29HP61GA_0 h2,
+    ._29HP61GA_0 h3,
+    ._29HP61GA_0 h4,
+    ._29HP61GA_0 h5 {
+      margin-bottom: 20px;
+      margin-top: 0;
+      font-weight: 700
+    }
+
+    ._29HP61GA_0 b,
+    ._29HP61GA_0 strong {
+      font-weight: 700
+    }
+
+    ._29HP61GA_0 h1 {
+      font-size: 21px
+    }
+
+    ._29HP61GA_0 h2 {
+      font-size: 20px
+    }
+
+    ._29HP61GA_0 h3 {
+      font-size: 19px
+    }
+
+    ._29HP61GA_0 h4 {
+      font-size: 18px
+    }
+
+    ._29HP61GA_0 h5 {
+      font-size: 17px
+    }
+
+    ._29HP61GA_0 center,
+    ._29HP61GA_0 p {
+      font-weight: 400;
+      color: #353535;
+      margin-top: 0;
+      margin-bottom: 30px;
+      word-break: break-word
+    }
+
+    ._29HP61GA_0 center {
+      text-align: center
+    }
+
+    ._29HP61GA_0 blockquote {
+      margin-top: 0;
+      margin-bottom: 34px;
+      border-left: 3px solid #e8e8e8;
+      padding-left: 17px;
+      color: #353535
+    }
+
+    ._29HP61GA_0 blockquote p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    ._29HP61GA_0 ol,
+    ._29HP61GA_0 ul {
+      margin-bottom: 30px
+    }
+
+    ._29HP61GA_0 ol p,
+    ._29HP61GA_0 ul p {
+      margin-top: 0;
+      margin-bottom: 0
+    }
+
+    ._29HP61GA_0 ol {
+      list-style: decimal;
+      margin-left: 20px
+    }
+
+    ._29HP61GA_0 ul li {
+      padding-left: 17px;
+      position: relative;
+      margin-bottom: 10px
+    }
+
+    ._29HP61GA_0 ul li:after {
+      content: "";
+      height: 6px;
+      width: 6px;
+      border-radius: 50%;
+      background: #353535;
+      position: absolute;
+      top: 10px;
+      left: 0
+    }
+
+    ._29HP61GA_0 .orange {
+      color: #fa8919
+    }
+
+    ._29HP61GA_0 .reference {
+      color: #888
+    }
+
+    ._29HP61GA_0 .m-right {
+      text-align: right
+    }
+
+    ._29HP61GA_0 .m-center {
+      text-align: center;
+      display: block
+    }
+
+    ._29HP61GA_0 .m-gray {
+      color: #888
+    }
+
+    ._29HP61GA_0 .m-small {
+      font-size: 15px
+    }
+
+    ._29HP61GA_0 table.hljs-ln {
+      margin-bottom: 0;
+      border-spacing: 0;
+      border-collapse: collapse
+    }
+
+    ._29HP61GA_0 table.hljs-ln,
+    ._29HP61GA_0 table.hljs-ln tbody,
+    ._29HP61GA_0 table.hljs-ln td,
+    ._29HP61GA_0 table.hljs-ln tr {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box
+    }
+
+    ._29HP61GA_0 table.hljs-ln td {
+      padding: 0;
+      border: 0
+    }
+
+    ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+      min-width: 15px;
+      font-size: 12px;
+      color: rgba(27, 31, 35, .3);
+      text-align: right;
+      white-space: nowrap;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    ._29HP61GA_0 table.hljs-ln td.hljs-ln-code,
+    ._29HP61GA_0 table.hljs-ln td.hljs-ln-numbers {
+      font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, Courier, monospace;
+      line-height: 20px;
+      vertical-align: top
+    }
+
+    ._29HP61GA_0 table.hljs-ln td.hljs-ln-code {
+      position: relative;
+      padding-right: 10px;
+      padding-left: 10px;
+      overflow: visible;
+      font-size: 13px;
+      color: #666;
+      word-wrap: normal;
+      white-space: pre
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="_29HP61GA_0">
+    <h1>13-白天开会，加班写代码的节奏怎么破？</h1>
+    <p>你好，我是宝玉，我今天想与你讨论让很多程序员头疼的话题：开会。</p>
+    <p>说到开会，是很多人心中的痛，每天白天忙于参加各种会议，压缩了本来就少的可怜的工作时间。最可气的，有的人开完会工作就算完成了，而像我们写程序的，还得下班后加班加点赶进度！</p>
+    <p>所以一说到开会，程序员们往往如遇洪水猛兽一般，避之不及。</p>
+    <h2>开会是有价值的</h2>
+    <p>但我想说的第一个问题是：<strong>开会是有价值的。</strong>软件项目中有不少会议，其实有其价值所在，给你简单举例分析一下。</p>
+    <p>像评审会议，通过会议，可以让产品设计或架构设计在确定前，收集大家的意见，及时发现问题。</p>
+    <p>像每日站立会议，可以及时了解项目的进展，了解当前的困难和瓶颈，及时调整计划，解决问题。另外在会议上，每个人都要当众讲一下做过的事情和计划要做的事情，这也是一种无形的监督和约束。</p>
+    <p>像项目立项会议，可以创建一种仪式感，让每个人都知道项目的关键信息：</p>
+    <ul>
+      <li><strong>项目目标：</strong>这项目是要干什么的，达到一个什么目标；</li>
+      <li><strong>项目里程碑：</strong>项目的开始结束时间，项目的阶段划分，以及各个阶段的时间点；</li>
+      <li><strong>角色分工：</strong>项目成员的分工和角色是什么，每个人知道自己的任务是什么，知道遇到问题该找谁；</li>
+      <li><strong>流程规范：</strong>项目开发的主要流程是什么，基于瀑布还是敏捷。</li>
+    </ul>
+    <p>像项目总结会议，团队成员可以一起总结一下项目的得失，把经验总结下来，帮助团队在下一次做的更好。</p><!-- [[[read_end]]] -->
+    <p>还有很多会议我就不一一列举。从上面可以看出，这些会议都是可以创造价值的。</p>
+    <h2>开会是有成本的</h2>
+    <p>开会的成本，就像房间里的大象，显而易见而很多人却有意无意无视它的存在。</p>
+    <p>我们做个简单的数学计算，假设一个程序员月薪一万元，如果他每天四分之一的时间在开会，那就相当于公司每月花了2500元在会议上。</p>
+    <p>这还只是一个人的成本，如果开会的人多，那么仔细算算，整体的会议成本其实很夸张的。所以我想说的第二个问题就是：<strong>开会其实是有成本的，而且还不低。</strong></p>
+    <h2>什么样的会议是有效率的？</h2>
+    <p>其实软件项目中有些会议我是愿意参加的，因为是有价值的，高效的。比如说前面提到的每日站立会议，时间不长，但是收获很大。</p>
+    <p>再比如隔壁郑晔老师的《10x程序员工作法》专栏中提到的“<a
+         href="http://time.geekbang.org/column/article/82844">轻量级沟通</a>”，其中建议的会议方式：人少，面对面沟通。这种小会通常也让我觉得很高效，经常能产生有价值的方案。
+    </p>
+    <p>还有一些会议则让我觉得没什么价值，比如领导冗长的讲话，比如一堆人在偏离会议主题的讨论，比如跟我没什么关系却被迫参加的会议。</p>
+    <p>那么为什么这些会议给我的感觉完全不一样？这其实就是我想讲的第三个问题：会议是不是有效率，取决于它创造的价值是不是高于其成本。</p>
+    <p>我觉得像每日站立会这样的会议更有效率，其时间短、人数少，所以成本低，创造的价值高于其成本。而人数多，又偏离会议主题的讨论会则没有价值，这是因为人数多时间长，导致会议成本高，而其创造的价值远远不及成本。</p>
+    <p>那为什么还有那么多低效率的会议？<strong>因为有的会议，就不是为了创造价值。</strong></p>
+    <p>比如说有的会议，花的成本不是组织者的，对他来说，得到他的会议价值就可以了。</p>
+    <blockquote>
+      <p>你是砍柴的，他是放羊的，你和他聊了一天，他的羊吃饱了，你的柴呢？</p>
+    </blockquote>
+    <p>还有很多会议，是因为组织者和参与者，都没有意识到开会其实是有成本的，所以浪费了成本还不自知。不过这种情况还好，还是可以想办法改进的。</p>
+    <p>接下来，我们来看看如何提高开会效率，破除避免白天开会，晚上还要加班写代码的节奏。</p>
+    <h2>如何提高开会效率？</h2>
+    <p>我们专栏有一篇文章《<a href="http://time.geekbang.org/column/article/85302">08 |
+        怎样平衡软件质量与时间成本范围的关系？</a>》，很多同学看过里面讲的软件项目金三角理论后，直呼“醍醐灌顶”、“终于找到一套可以说服老板的说辞了”、“能够提高与产品经理打太极的水准”。</p>
+    <p>其实提高开会效率、提升开会价值的方法，就跟软件项目金三角的理论一样，只要从两个角度去想办法：<strong>减少开会的成本，增加开会创造的价值！</strong></p>
+    <p>在具体探讨这两类方法之前，我们先要认识到一个前提：<strong>那就是要让大家意识到开会是有成本的，如果开会创造的价值不能大于其成本，就是浪费。</strong></p>
+    <p>就像金三角理论，你得先让老板、项目经理明白三条边不可能都占，才好去沟通讨论。要提高开会效率，也需要大家先有这个意识，才能在具体措施上达成一致。</p>
+    <p>那么，有哪些方法可以减少开会的成本呢？</p>
+    <p><strong>1.砍掉一些没价值的会议</strong></p>
+    <p>在日常工作中，还有很多会议其实并没有什么价值的。如果一个会议符合这些标准，你就要慎重考虑参加了：</p>
+    <ul>
+      <li>没有目标的会议。大家都在随意发散，完全没有主题；</li>
+      <li>不能形成决策，没有会后行动。如果一场会议看完后都没有什么结果，那跟没开都没啥差别；</li>
+      <li>你属于可有可无的角色。如果一个会议，跟你其实没什么关系，你无法提供有效的反馈，对你也没什么价值，只不过是被人拉过去开会的，那不如把这个时间用来做一点对项目更有价值的事。</li>
+    </ul>
+    <p>所以，你可以在每次要接受一个会议邀请之前，先问自己两个问题再做决定：这个会议我真的有必要参加吗？以及，有其他方式可以替代吗？</p>
+    <p>其实，很多问题并不是非要通过“会议”的方式解决。</p>
+    <p>
+      以前我负责的一个服务，其他组需要调用，所以有一个组的同事想跟我组织一个会议，让我介绍一下服务，以及如何调用。我思考了一下，觉得准备这个会议我也要写一个PPT，开会还得要时间，这时间我足够写一个详细的说明文档出来了，而且以后其他组再要用，也只要看文档就可以了。
+    </p>
+    <p>于是我就跟他们说：我们不用开会，我一会发一个文档链接给你们，如果有问题我们可以在聊天工具上沟通。后来他们看完文档后，有几处不清楚的地方，在咨询过我以后，我将文档更新好，就没什么问题了，而且后面再不需要为这件事开会了。</p>
+    <p><strong>2.减少参与会议的人</strong></p>
+    <p><strong>会议的成本和两个因素相关：一个是人数，一个是时间。如果减少人数，就能减少成本。</strong></p>
+    <p>
+      减少人数好处还在于，人一少，每个人都会更投入，也更有效率，所以往往时间反而会少产出会高。而且，如果会议上要形成一些决议，人越多越难做决策，人越少越容易达成一致。要想有决议的话，先开几个小会，达成一致后再开大会，大会更多只是宣布一个结果。
+    </p>
+    <p>像谷歌和Facebook，他们对于会议的态度就是能不开就不开，无关的人不参与。Amazon 的规则也很简单：一场会议的人数，最多订两份批萨，如果超出这个规模，说明这个会议的人数太多了。</p>
+    <p><strong>3.缩短开会时间</strong></p>
+    <p>减少开会成本的另一个方法就是缩短开会时间。缩短开会时间有很多成熟可靠的方案可以选择。</p>
+    <p>比如说站立会议，通过站立的方式逼着大家快点结束。</p>
+    <p>另外，麦肯锡开会上有些做法也值得借鉴：</p>
+    <ul>
+      <li>每个成员有一张黄牌，用于喊停其他人会议中发散讨论无意义的话题；</li>
+      <li>有人控制节奏，大家快速发言；</li>
+      <li>PPT不超过3张，鼓励大家预先准备，多讨论。</li>
+    </ul>
+    <p>还有比如我们在前面敏捷开发介绍的例子，会议有人主持，当话题开始发散的时候，果断制止，放到“停车场问题”环节，也就是会议的最后专门讨论。</p>
+    <p>类似这样的缩短开会时间的办法，确实可以有效减少会议成本，这类提升效率的方法还有很多，你可以从这个角度多思考尝试一下。</p>
+    <p><strong>4.提升会议所创造的价值</strong></p>
+    <p>如果能有效提升会议产出，也一样可以达到很好的效果。</p>
+    <p>比如说，每个会议要有明确的目的和主题，所有的讨论都要围绕会议目的展开。当你发现会议上一些问题的讨论偏离了会议的主题，例如一个需求评审会，结果架构师在讨论技术细节，这就完全偏离了主题。</p>
+    <p>你就应该站出来提醒一句：“现在既然是讨论需求，不如先不讨论技术上的问题，等到需求确定了，我们后面再慢慢讨论技术问题。”或者说：“不如这个问题我们另外组织一个会议讨论。”</p>
+    <p>还有开会后，要有明确的结论，有后续的待办事项，落实到个人，对待办事项有跟踪。</p>
+    <p>偷偷说一下，有时候一些没什么价值的会议，又必须要参加，我一般会参会前，用一个本子把一个技术难题、或者一篇博客主题，写下来。</p>
+    <p>开会的时候，把这个难题理清楚思路，把博客的提纲写出来，这样一个会议开完，我的问题也解决了，或者文章提纲也有了。同样也是收获满满，没有浪费太多时间。</p>
+    <p>这些都是提升会议价值的方式，相信你对会议成本有了概念以后，也可以找到很多可以帮助你提高开会效率、更好创造会议价值的方法。</p>
+    <h2>总结</h2>
+    <p>今天带你一起学习了解了开会的“道”，那就是开会是有价值的，开会是有成本，会议是不是高效，就看它创造的价值是不是高于其成本。</p>
+    <p>如果你想破除白天开会，加班写代码的节奏，就需要从缩减开会成本和提升开会价值的方向上去想办法，还需要让你的老板、项目经理都有“会议是有很高成本”的意识。</p>
+    <p>砍掉一些没价值的会议，减少开会的人数，缩短会议的时间，提高会议创造的价值。</p>
+</body>
+
+</html>
