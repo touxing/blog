@@ -57,6 +57,7 @@ module.exports = {
           ['/zh/css/', 'CSS'],
           ['/zh/javascript/', 'JavaScript'],
           ['/zh/algo/', '算法'],
+          ['/zh/deploy/', '部署'],
           {
             title: '工具利器',
             path: '/zh/tools/',
