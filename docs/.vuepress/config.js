@@ -79,5 +79,15 @@ module.exports = {
   plugins: ['@vuepress/back-to-top'],
   chainWebpack: (config, isServer) => {
     config.resolve.alias.set('@img', '/assets/img')
+    config.module
+      .rule('svg')
+      .test(/\.svg$/)
+      .use('svg-url-loader')
+      .loader('svg-url-loader')
+  },
+  markdown: {
+    extendMarkdown: (md) => {
+      md.use(require('markdown-it-disable-url-encode'))
+    },
   },
 }

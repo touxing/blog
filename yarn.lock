@@ -3241,6 +3241,14 @@ file-loader@^3.0.1:
     loader-utils "^1.0.2"
     schema-utils "^1.0.0"
 
+file-loader@~6.0.0:
+  version "6.0.0"
+  resolved "http://r.cnpmjs.org/file-loader/download/file-loader-6.0.0.tgz#97bbfaab7a2460c07bcbd72d3a6922407f67649f"
+  integrity sha1-l7v6q3okYMB7y9ctOmkiQH9nZJ8=
+  dependencies:
+    loader-utils "^2.0.0"
+    schema-utils "^2.6.5"
+
 file-uri-to-path@1.0.0:
   version "1.0.0"
   resolved "http://r.cnpmjs.org/file-uri-to-path/download/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
@@ -4497,6 +4505,15 @@ loader-utils@^1.0.2, loader-utils@^1.1.0, loader-utils@^1.2.3, loader-utils@^1.4
     emojis-list "^3.0.0"
     json5 "^1.0.1"
 
+loader-utils@^2.0.0, loader-utils@~2.0.0:
+  version "2.0.0"
+  resolved "http://r.cnpmjs.org/loader-utils/download/loader-utils-2.0.0.tgz#e4cace5b816d425a166b5f097e10cd12b36064b0"
+  integrity sha1-5MrOW4FtQloWa18JfhDNErNgZLA=
+  dependencies:
+    big.js "^5.2.2"
+    emojis-list "^3.0.0"
+    json5 "^2.1.2"
+
 locate-path@^2.0.0:
   version "2.0.0"
   resolved "http://r.cnpmjs.org/locate-path/download/locate-path-2.0.0.tgz#2b568b265eec944c6d9c0de9c3dbbbca0354cd8e"
@@ -4655,6 +4672,11 @@ markdown-it-container@^2.0.0:
   version "2.0.0"
   resolved "http://r.cnpmjs.org/markdown-it-container/download/markdown-it-container-2.0.0.tgz#0019b43fd02eefece2f1960a2895fba81a404695"
   integrity sha1-ABm0P9Au7+zi8ZYKKJX7qBpARpU=
+
+markdown-it-disable-url-encode@^1.0.1:
+  version "1.0.1"
+  resolved "http://r.cnpmjs.org/markdown-it-disable-url-encode/download/markdown-it-disable-url-encode-1.0.1.tgz#ecd653703bd824bdfabcf18f2ff0ad6d5b168bd1"
+  integrity sha1-7NZTcDvYJL36vPGPL/CtbVsWi9E=
 
 markdown-it-emoji@^1.4.0:
   version "1.4.0"
@@ -6919,6 +6941,14 @@ svg-tags@^1.0.0:
   version "1.0.0"
   resolved "http://r.cnpmjs.org/svg-tags/download/svg-tags-1.0.0.tgz#58f71cee3bd519b59d4b2a843b6c7de64ac04764"
   integrity sha1-WPcc7jvVGbWdSyqEO2x95krAR2Q=
+
+svg-url-loader@^5.0.0:
+  version "5.0.0"
+  resolved "http://r.cnpmjs.org/svg-url-loader/download/svg-url-loader-5.0.0.tgz#0cbcfc4eed916df485ec879fb0cf6ea4340e57bc"
+  integrity sha1-DLz8Tu2RbfSF7IefsM9upDQOV7w=
+  dependencies:
+    file-loader "~6.0.0"
+    loader-utils "~2.0.0"
 
 svgo@^1.0.0:
   version "1.3.2"
