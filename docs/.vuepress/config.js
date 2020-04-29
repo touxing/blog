@@ -82,13 +82,23 @@ module.exports = {
     config.resolve.alias.set('@img', '/assets/img')
     config.module
       .rule('svg')
-      .test(/\.svg$/)
-      .use('svg-url-loader')
-      .loader('svg-url-loader')
-  },
-  markdown: {
-    extendMarkdown: (md) => {
-      md.use(require('markdown-it-disable-url-encode'))
-    },
+        .test(/\.svg$/)
+        .use('svg-url-loader')
+          .loader('svg-url-loader')
+          .options({
+            limit: 80 * 1024
+          })
+      .end()
+        .use('file-loader')
+        .loader('file-loader')
+      .end()
+    config.module
+      .rule('image')
+      .test(/\.(png|jpe?g|gif)$/i)
+      .use('file-loader')
+        .loader('file-loader')
+        .options({
+          esModules: false
+        })
   },
 }
