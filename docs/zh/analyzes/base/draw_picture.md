@@ -36,7 +36,7 @@ plt.title('线性增长')
 
 
 
-![svg](/img/output_2_1.svg)
+<img :src="$withBase('/img/output_2_1.svg')" alt="svg" />
 
 
 
@@ -60,7 +60,7 @@ ax.legend()
 
 
 
-![svg](/img/output_3_1.svg)
+<img :src="$withBase('/img/output_3_1.svg')" alt="svg" />
 
 
 
@@ -120,7 +120,7 @@ my_plotter(ax, data1, data2, {'marker': 'x'})
 
 
 
-![svg](/img/output_6_1.svg)
+<img :src="$withBase('/img/output_6_1.svg')" alt="svg" />
 
 
 
