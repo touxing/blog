@@ -36,15 +36,16 @@
   // 观察者
   function observe(obj) {
     for (var key in obj) {
+      // 把数据响应化
       defineReactive(obj, key, obj[key])
     }
   }
 
   var uid$1 = 0
 
-  // 依赖收集器
+  // 订阅者，用来存放 Watcher 对象的实例
   function Dep() {
-    this.subs = []
+    this.subs = [] // 保存 Watcher 实例
     this.id = uid$1++
   }
 
@@ -54,9 +55,10 @@
     this.subs.push(sub)
   }
 
-  // 通知
+  // 通知事件，通知响应数据和更新dom
   Dep.prototype.notify = function() {
     var subs = this.subs
+    // 遍历通知每一个 watch
     for (var i = 0, l = subs.length; i < l; i++) {
       // 触发更新dom
       subs[i].update()
@@ -65,30 +67,32 @@
 
   // 观察者，监测数据
   function Watcher(vm, expOrFn, cb) {
-    this.vm = vm
-    this.getter = expOrFn
-    this.cb = cb
-    this.depIds = []
+    this.vm = vm // vue实例
+    this.getter = expOrFn // 监测的表达式 or function
+    this.cb = cb // 回调
+    this.depIds = [] // 依赖Id池
     this.value = this.get()
   }
 
   Watcher.prototype.get = function() {
-    Dep.target = this /* ! */
+    Dep.target = this /* ! 保存当前上下文 this的指向 */
     //! 这里是关键
-    var value = this.getter.call(this.vm)
+    var value = this.getter.call(this.vm) // 传入的expOrFn this 指向 vue 实例
     Dep.target = null
     return value
   }
 
+  // Watcher 更新监测的值
   Watcher.prototype.update = function() {
     var value = this.get()
-    if (this.value !== value) {
+    if (this.value !== value) { // 内部优化，值没有变化不做处理
       var oldValue = this.value
       this.value = value
-      this.cb.call(this.vm, value, oldValue)
+      this.cb.call(this.vm, value, oldValue) // 回调，watch 方法的function(newValue, oldValue)
     }
   }
 
+  // Watcher 绑定对应的订阅者
   Watcher.prototype.addDep = function(dep) {
     var id = dep.id
     // to avoid depending the watcher to the same dep more than once
@@ -290,6 +294,7 @@
     observe(data)
   }
 
+  // 代理访问
   function proxy(vm, key) {
     Object.defineProperty(vm, key, {
       configurable: true,
