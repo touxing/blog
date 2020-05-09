@@ -21,7 +21,7 @@ locales:
     description: "Vue 驱动的静态网站生成器"
 # 主题配置
 themeConfig:
-  logo: /assets/img/logo-64.png
+  logo: /img/logo-64.png
   locales:
     /:
       lang: "en-US" # 将会被设置为 <html> 的 lang 属性
