@@ -1,14 +1,14 @@
 module.exports = {
   base: '/blog/',
   title: '十年磨一剑',
-  head: ['link', { rel: 'icon', href: '/assets/img/logo-64.png' }],
+  head: ['link', { rel: 'icon', href: '/img/logo-64.png' }],
   description: 'JavaScript学习地，前端进阶之路',
   locales: {
     '/': { lang: 'en-US', title: 'Grinding sword', description: 'Vue-powered Static Site Generator' },
     '/zh/': { lang: 'zh-CN', title: '磨刀', description: 'Vue 驱动的静态网站生成器' },
   },
   themeConfig: {
-    logo: '/assets/img/logo-64.png',
+    logo: '/img/logo-64.png',
     locales: {
       '/': {
         lang: 'en-US',

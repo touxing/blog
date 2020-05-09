@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /assets/img/logo-64.png
+heroImage: /img/logo-64.png
 heroText: 总想写点什么
 tagline: 不管好与不好
 actionText: 开启记录 →

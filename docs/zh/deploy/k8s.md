@@ -155,3 +155,4 @@ spec:
 ```
 运行 Service `kubectl apply -f pod-sh5.yml`
 查看 `kubectl get services`
+
