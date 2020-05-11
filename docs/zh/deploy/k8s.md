@@ -186,3 +186,4 @@ kubectl create -f src/main/kubernetes/jenkins.yml
 # 获取访问url
 minikube service jenkins --namespace kubernetes-plugin
 ```
+在dashboard中访问，会看到 Pods 的状态是 `Failed` , 查看日志排查错误，如果日志正常，只需要访问 `http://<master_ip>:8080` 安装 Jenkins。如果不正常，需要根据日志 Google 排查问题。
