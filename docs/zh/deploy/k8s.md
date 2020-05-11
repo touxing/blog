@@ -156,3 +156,33 @@ spec:
 运行 Service `kubectl apply -f pod-sh5.yml`
 查看 `kubectl get services`
 
+### 应用
+
+[5分钟搞定在k8s上部署jenkins，并提供域名访问](https://mp.weixin.qq.com/s?__biz=MjM5MzU5NDYwNA==&mid=2247485698&idx=2&sn=5b2f74a8f0f1d9e383e34da2964e35a3&chksm=a695e48191e26d97d33573cea4cd9d2a1cef463785acd7c7b0ee889e4556839bf9ca5ffdd9f7&scene=21#wechat_redirect)
+
+Github上的一个项目：
+[Jenkins plugin to run dynamic agents in a Kubernetes/Docker environment](https://github.com/jenkinsci/kubernetes-plugin)
+
+上面提供了jenkins在kubernetes中容器化的部署方式，以及yaml文件，现在直接 git clone 下来。在部署好k8s平台上安装 jenkins
+```bash
+git clone https://github.com/jenkinsci/kubernetes-plugin.git
+cd kubernetes-plugin
+# 配置 minikube refe: https://github.com/jenkinsci/kubernetes-plugin#configuration-on-minikube
+# 客户端证书需要转换为PKCS(公共秘钥)
+openssl pkcs12 -export -out ~/.minikube/minikube.pfx -inkey ~/.minikube/apiserver.key -in ~/.minikube/apiserver.crt -certfile ~/.minikube/ca.crt -passout pass:secret
+# 检验 认证是否生效
+curl --cacert ~/.minikube/ca.crt --cert ~/.minikube/minikube.pfx:secret --cert-type P12 https://$(minikube ip):8443
+```
+
+在 minikube 中运行
+```bash
+minikube start
+# 创建命名空间和Service
+kubectl create namespace kubernetes-plugin
+kubectl config set-context $(kubectl config current-context) --namespace=kubernetes-plugin
+kubectl create -f src/main/kubernetes/service-account.yml
+kubectl create -f src/main/kubernetes/jenkins.yml
+
+# 获取访问url
+minikube service jenkins --namespace kubernetes-plugin
+```
