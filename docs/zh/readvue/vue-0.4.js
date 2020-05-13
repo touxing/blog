@@ -132,7 +132,7 @@
   }
 
 
-  // 这里使用了[外观模式](/zh/javascript/15外观模式/)，
+  // 这里使用了 [外观模式](/zh/javascript/15外观模式/)，
   // 统一对外接口 vnode 用不同的方法包装初始化得到不同的结构
   /**
    * @description: 创建文本virtual node
