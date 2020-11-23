@@ -44,6 +44,7 @@ module.exports = {
                   { text: '设计模式', link: '/zh/javascript/#设计模式' },
                   { text: '算法', link: '/zh/algo/' },
                   { text: '数据分析', link: '/zh/analyzes/' },
+                  { text: '面试', link: '/zh/面试/' },
                 ],
               },
               { text: '后端', link: '/zh/backend/' },
