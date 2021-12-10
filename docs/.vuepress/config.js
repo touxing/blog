@@ -1,5 +1,6 @@
+let baseUrl = '/blog/'
 module.exports = {
-  base: '/blog/',
+  base: baseUrl,
   title: '十年磨一剑',
   head: ['link', { rel: 'icon', href: '/img/logo-64.png' }],
   description: 'JavaScript学习地，前端进阶之路',
@@ -69,9 +70,17 @@ module.exports = {
               ['/zh/tools/nginx', 'Nginx'],
             ],
           },
+          {
+            title: 'TODO',
+            path: '/zh/TODO',
+            sidebarDepth: 1,
+            children: [
+              ['/zh/TODO/todo_list', 'TODO LIST']
+            ]
+          },
           ['/zh/english/', '英语'],
         ],
-        displayAllHeaders: true,
+        displayAllHeaders: false,
         lastUpdated: 'Last Updated',
       },
     },
@@ -80,7 +89,7 @@ module.exports = {
   markdown: { lineNumbers: true },
   plugins: ['@vuepress/back-to-top'],
   chainWebpack: (config, isServer) => {
-    config.resolve.alias.set('@img', '/assets/img')
+    config.resolve.alias.set('@img', '/blog/img')
     config.module
       .rule('svg')
         .test(/\.svg$/)
@@ -99,7 +108,9 @@ module.exports = {
       .use('file-loader')
         .loader('file-loader')
         .options({
-          esModules: false
+          esModules: false,
+          // name: `${baseUrl}[name].[ext]`
         })
+      .end()
   },
 }
