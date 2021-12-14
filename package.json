@@ -7,10 +7,12 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "docs:build": "npm run build"
+    "docs:build": "npm run build",
+    "gh-pages-deploy": "node scripts/gh-pages-deploy.mjs"
   },
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.8.2",
+    "execa": "^6.0.0",
     "svg-url-loader": "^7.1.1",
     "vuepress": "^1.8.2"
   }
