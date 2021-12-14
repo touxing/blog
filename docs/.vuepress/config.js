@@ -12,6 +12,8 @@ module.exports = {
   },
   themeConfig: {
     logo: '/img/logo-64.png',
+    searchMaxSuggestions: 10,
+    smoothScroll: true,
     locales: {
       '/': {
         lang: 'en-US',
@@ -86,10 +88,23 @@ module.exports = {
         lastUpdated: 'Last Updated',
       },
     },
-    smoothScroll: true,
   },
   markdown: { lineNumbers: true },
-  plugins: ['@vuepress/back-to-top'],
+  plugins: [
+    '@vuepress/back-to-top',
+    [
+      'vuepress-plugin-comment',
+      {
+        choosen: 'valine',
+        // options选项中的所有参数，会传给Valine的配置
+        options: {
+          el: '#vcomments',
+          appId: 'Db90BbPY9gdrIG1QVLcBgB15-MdYXbMMI',
+          appKey: '22FwueoBtgzrCjrYyjNtiajY'
+        }
+      }
+    ]
+  ],
   chainWebpack: (config, isServer) => {
     config.resolve.alias.set('@img', '/blog/img')
     config.module
