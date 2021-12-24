@@ -12,7 +12,7 @@ yarn add -D prettier
 
 ## 2.配置
 在项目根目录新建 `.prettierc` 文件，编辑规则参考官网，例子如下：
-```
+```json
 {
   "parser": "babel",
   "trailingComma": "es5",
@@ -50,7 +50,7 @@ yarn add -D prettier
 
 ### 配置命令
 为了方便使用，把格式化命令写成 npm 脚本。当然每次单独写命令执行也是可以的。
-```
+```json
 "scripts": {
  "fix": "npx prettier --write js/*.js component/** less/** *.html"
 }
@@ -70,7 +70,7 @@ dist/
 ```
 
 ### 执行格式化
-```
+```sh
 yarn fix
 ```
 再看源码文件，会发现文件被格式化了。
