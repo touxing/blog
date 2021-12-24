@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>工厂模式 | 磨刀</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="/blog/img/logo-64.png">
+    <meta name="description" content="Vue 驱动的静态网站生成器">
+    
+    <link rel="preload" href="/blog/assets/css/0.styles.2b0b3627.css" as="style"><link rel="preload" href="/blog/assets/js/app.64f4eb03.js" as="script"><link rel="preload" href="/blog/assets/js/2.359db232.js" as="script"><link rel="preload" href="/blog/assets/js/55.acb290ff.js" as="script"><link rel="prefetch" href="/blog/assets/js/10.a43aee4e.js"><link rel="prefetch" href="/blog/assets/js/11.63b1e93e.js"><link rel="prefetch" href="/blog/assets/js/12.0980b70b.js"><link rel="prefetch" href="/blog/assets/js/13.5a2eb956.js"><link rel="prefetch" href="/blog/assets/js/14.f4c1af63.js"><link rel="prefetch" href="/blog/assets/js/15.a586446c.js"><link rel="prefetch" href="/blog/assets/js/16.a4042b63.js"><link rel="prefetch" href="/blog/assets/js/17.3903f516.js"><link rel="prefetch" href="/blog/assets/js/18.ce98f1ec.js"><link rel="prefetch" href="/blog/assets/js/19.993b06c5.js"><link rel="prefetch" href="/blog/assets/js/20.933e4dc7.js"><link rel="prefetch" href="/blog/assets/js/21.c48ed550.js"><link rel="prefetch" href="/blog/assets/js/22.85dcbbba.js"><link rel="prefetch" href="/blog/assets/js/23.fd4f2234.js"><link rel="prefetch" href="/blog/assets/js/24.11d19df6.js"><link rel="prefetch" href="/blog/assets/js/25.36917787.js"><link rel="prefetch" href="/blog/assets/js/26.e9e0f26c.js"><link rel="prefetch" href="/blog/assets/js/27.fe8b5f73.js"><link rel="prefetch" href="/blog/assets/js/28.7a0a5682.js"><link rel="prefetch" href="/blog/assets/js/29.7063f202.js"><link rel="prefetch" href="/blog/assets/js/3.35484ba4.js"><link rel="prefetch" href="/blog/assets/js/30.ed9f10bf.js"><link rel="prefetch" href="/blog/assets/js/31.c9db2bac.js"><link rel="prefetch" href="/blog/assets/js/32.79ed5b06.js"><link rel="prefetch" href="/blog/assets/js/33.83074cb8.js"><link rel="prefetch" href="/blog/assets/js/34.6131e252.js"><link rel="prefetch" href="/blog/assets/js/35.36ab6260.js"><link rel="prefetch" href="/blog/assets/js/36.d334bcf3.js"><link rel="prefetch" href="/blog/assets/js/37.0b3d3699.js"><link rel="prefetch" href="/blog/assets/js/38.44e3e3f0.js"><link rel="prefetch" href="/blog/assets/js/39.9a27ea58.js"><link rel="prefetch" href="/blog/assets/js/4.b2a5f87c.js"><link rel="prefetch" href="/blog/assets/js/40.1ffb37bd.js"><link rel="prefetch" href="/blog/assets/js/41.63bedf4a.js"><link rel="prefetch" href="/blog/assets/js/42.f68d6d94.js"><link rel="prefetch" href="/blog/assets/js/43.cefdd444.js"><link rel="prefetch" href="/blog/assets/js/44.59e881b2.js"><link rel="prefetch" href="/blog/assets/js/45.5a6c3988.js"><link rel="prefetch" href="/blog/assets/js/46.27195dd5.js"><link rel="prefetch" href="/blog/assets/js/47.f09500b2.js"><link rel="prefetch" href="/blog/assets/js/48.d999fdff.js"><link rel="prefetch" href="/blog/assets/js/49.a16eff0c.js"><link rel="prefetch" href="/blog/assets/js/5.c9c68a55.js"><link rel="prefetch" href="/blog/assets/js/50.ae451f86.js"><link rel="prefetch" href="/blog/assets/js/51.c5d4124d.js"><link rel="prefetch" href="/blog/assets/js/52.da021f4d.js"><link rel="prefetch" href="/blog/assets/js/53.6a907685.js"><link rel="prefetch" href="/blog/assets/js/54.3615df75.js"><link rel="prefetch" href="/blog/assets/js/56.2b28533b.js"><link rel="prefetch" href="/blog/assets/js/57.848ab815.js"><link rel="prefetch" href="/blog/assets/js/58.c55cc139.js"><link rel="prefetch" href="/blog/assets/js/59.f6f36ddd.js"><link rel="prefetch" href="/blog/assets/js/6.865b15f5.js"><link rel="prefetch" href="/blog/assets/js/60.9d0e43c5.js"><link rel="prefetch" href="/blog/assets/js/61.d304a9ef.js"><link rel="prefetch" href="/blog/assets/js/62.9486379d.js"><link rel="prefetch" href="/blog/assets/js/63.d3e20a2f.js"><link rel="prefetch" href="/blog/assets/js/64.5054336a.js"><link rel="prefetch" href="/blog/assets/js/65.650f4274.js"><link rel="prefetch" href="/blog/assets/js/66.0ef3288a.js"><link rel="prefetch" href="/blog/assets/js/67.abd164f0.js"><link rel="prefetch" href="/blog/assets/js/68.47fd5e03.js"><link rel="prefetch" href="/blog/assets/js/69.20780c84.js"><link rel="prefetch" href="/blog/assets/js/7.fe5bc70b.js"><link rel="prefetch" href="/blog/assets/js/70.6c7c2122.js"><link rel="prefetch" href="/blog/assets/js/71.97e927ba.js"><link rel="prefetch" href="/blog/assets/js/72.3b178305.js"><link rel="prefetch" href="/blog/assets/js/73.861af77e.js"><link rel="prefetch" href="/blog/assets/js/74.8853a3a9.js"><link rel="prefetch" href="/blog/assets/js/75.651c0eb9.js"><link rel="prefetch" href="/blog/assets/js/76.770bffc5.js"><link rel="prefetch" href="/blog/assets/js/77.6ca14db6.js"><link rel="prefetch" href="/blog/assets/js/78.75119eb3.js"><link rel="prefetch" href="/blog/assets/js/79.0c5fdef0.js"><link rel="prefetch" href="/blog/assets/js/8.be1357d3.js"><link rel="prefetch" href="/blog/assets/js/80.916a96ff.js"><link rel="prefetch" href="/blog/assets/js/81.fd9ce480.js"><link rel="prefetch" href="/blog/assets/js/82.df1c2119.js"><link rel="prefetch" href="/blog/assets/js/83.d00ac67e.js"><link rel="prefetch" href="/blog/assets/js/84.97392db3.js"><link rel="prefetch" href="/blog/assets/js/85.08c15469.js"><link rel="prefetch" href="/blog/assets/js/86.34dcb59d.js"><link rel="prefetch" href="/blog/assets/js/9.388a86ff.js">
+    <link rel="stylesheet" href="/blog/assets/css/0.styles.2b0b3627.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/blog/zh/" class="home-link router-link-active"><img src="/blog/img/logo-64.png" alt="磨刀" class="logo"> <span class="site-name can-hide">磨刀</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/blog/zh/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/blog/zh/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Note Menu" class="dropdown-title"><span class="title">Note</span> <span class="arrow down"></span></button> <button type="button" aria-label="Note Menu" class="mobile-dropdown-title"><span class="title">Note</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/zh/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/tools/" class="nav-link">
+  工具利器
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/javascript/#设计模式" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/algo/" class="nav-link">
+  算法
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/analyzes/" class="nav-link">
+  数据分析
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/面试/" class="nav-link">
+  面试
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/blog/zh/backend/" class="nav-link">
+  后端
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/touxing" target="_blank" rel="hotsuitor blog" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/" class="nav-link">
+  en-US
+</a></li><li class="dropdown-item"><!----> <a href="/blog/zh/javascript/08%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/blog/zh/" class="nav-link">
+  主页
+</a></div><div class="nav-item"><a href="/blog/zh/guide/" class="nav-link">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Note Menu" class="dropdown-title"><span class="title">Note</span> <span class="arrow down"></span></button> <button type="button" aria-label="Note Menu" class="mobile-dropdown-title"><span class="title">Note</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          前端
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/blog/zh/html/" class="nav-link">
+  HTML
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/css/" class="nav-link">
+  CSS
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/javascript/" class="nav-link router-link-active">
+  JavaScript
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/git/" class="nav-link">
+  Git
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/tools/" class="nav-link">
+  工具利器
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/javascript/#设计模式" class="nav-link">
+  设计模式
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/algo/" class="nav-link">
+  算法
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/analyzes/" class="nav-link">
+  数据分析
+</a></li><li class="dropdown-subitem"><a href="/blog/zh/面试/" class="nav-link">
+  面试
+</a></li></ul></li><li class="dropdown-item"><!----> <a href="/blog/zh/backend/" class="nav-link">
+  后端
+</a></li></ul></div></div><div class="nav-item"><a href="https://github.com/touxing" target="_blank" rel="hotsuitor blog" class="nav-link external">
+  GitHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/blog/" class="nav-link">
+  en-US
+</a></li><li class="dropdown-item"><!----> <a href="/blog/zh/javascript/08%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><a href="/blog/zh/" aria-current="page" class="sidebar-link">介绍</a></li><li><a href="/blog/zh/html/" class="sidebar-link">HTML</a></li><li><a href="/blog/zh/css/" class="sidebar-link">CSS</a></li><li><a href="/blog/zh/javascript/" aria-current="page" class="sidebar-link">JavaScript</a></li><li><a href="/blog/zh/algo/" class="sidebar-link">算法</a></li><li><a href="/blog/zh/deploy/" class="sidebar-link">部署</a></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog/zh/tools/" class="sidebar-heading clickable"><span>工具利器</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/blog/zh/TODO" class="sidebar-heading clickable"><span>TODO</span> <span class="arrow right"></span></a> <!----></section></li><li><a href="/blog/zh/english/" class="sidebar-link">英语</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h2 id="工厂模式"><a href="#工厂模式" class="header-anchor">#</a> 工厂模式</h2> <p>工厂模式 （Factory Pattern），根据不同的输入返回不同类的实例，一般用来创建同一类对象。工厂方式的主要思想是将对象的创建与对象的实现分离</p> <h2 id="抽象工厂"><a href="#抽象工厂" class="header-anchor">#</a> 抽象工厂</h2> <p>抽象工厂 （Abstract Factory）：通过对类的工厂抽象使其业务用于对产品类簇的创建，而不是负责创建某一类产品的实例。关键在于使用抽象类制定了实例的结构，调用者直接面向实例的结构编程，从实例的具体实现中解耦。</p> <p>工厂模式，顾名思义，就相当于一间工厂，工厂可以添加不同的模具，制造不同系列的产品，比如生产飞机，大炮。</p> <p>抽象工厂，顾名思义，定义的是抽象的概念，没有定义如何实现。比如沈飞工厂生产飞机，定义抽象类“飞机”，具体实现，可以生产容量较大的C919客机，可以生产歼-20战斗机，B-20轰炸机。具体型号的飞机是实现，它们都符合 “飞机” 这个抽象类。</p> <p>抽象类实现</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">/* 抽象类，ES5 构造函数方式 */</span>
+<span class="token comment">// var AbstractEs5 = function() {</span>
+<span class="token comment">//   if(new.target === AbstractEs5) {</span>
+<span class="token comment">//     throw new Error('抽象类不能实例化')</span>
+<span class="token comment">//   }</span>
+<span class="token comment">// }</span>
+<span class="token comment">// AbstractEs5.prototype.fly = function() {</span>
+<span class="token comment">//   throw new Error('抽象类方法不能调用')</span>
+<span class="token comment">// }</span>
+
+<span class="token comment">//  抽象工厂 飞机制造厂</span>
+<span class="token keyword">class</span> <span class="token class-name">AbstractFactory</span>  <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">.</span>target <span class="token operator">===</span> AbstractFactory<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'抽象类不能实例化'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">// 抽象制造方法，我只会说要造什么，我不会造</span>
+  <span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'抽象类方法不能调用'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 我是抽象飞机，我是一款概念产品</span>
+<span class="token keyword">class</span> <span class="token class-name">AbstractPlane</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+   <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">.</span>target <span class="token operator">===</span> AbstractPlane<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'抽象类不能实例化'</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">fly</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">'抽象类方法不能调用'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 具体工厂模式，沈飞制造厂</span>
+<span class="token keyword">class</span> <span class="token class-name">FactoryShenFei</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractFactory</span> <span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token comment">/** todo: 内部可以使用策略模式，这里简单用 switch-case
+   * 实现抽象制造方法，我知道如何造飞机，我有很多模具
+  */</span>
+  <span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token parameter">type</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">switch</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">case</span> <span class="token string">'C919客机'</span><span class="token operator">:</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">C919Plane</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token string">'歼-20战斗机'</span><span class="token operator">:</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Jian20</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">case</span> <span class="token string">'B-20轰炸机'</span><span class="token operator">:</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">B20Hong</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+      <span class="token keyword">default</span><span class="token operator">:</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">PrintWorks</span><span class="token punctuation">(</span><span class="token string">'工厂没活干就喜欢开动印钞机'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 我是c919客机模具</span>
+<span class="token keyword">class</span> <span class="token class-name">C919Plane</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractPlane</span><span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">我是</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">具体产品</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">fly</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我可以飞得很猛，载客量大，安全第一'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 我是歼20战斗机模具</span>
+<span class="token keyword">class</span> <span class="token class-name">Jian20</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractPlane</span><span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">我是</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">具体产品</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">fly</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我可以飞得很快，咻咻咻'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 我是B20轰炸机模具</span>
+<span class="token keyword">class</span> <span class="token class-name">B20Hong</span> <span class="token keyword">extends</span> <span class="token class-name">AbstractPlane</span><span class="token punctuation">{</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">super</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">我是</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">具体产品</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+  <span class="token function">fly</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'我可以飞得很久，载蛋量大，轰轰轰'</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">var</span> <span class="token constant">F1</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FactoryShenFei</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">var</span> <span class="token constant">C9</span> <span class="token operator">=</span> <span class="token constant">F1</span><span class="token punctuation">.</span><span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token string">'C919客机'</span><span class="token punctuation">)</span>
+<span class="token constant">C9</span><span class="token punctuation">.</span><span class="token function">fly</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> <span class="token constant">J20</span> <span class="token operator">=</span> <span class="token constant">F1</span><span class="token punctuation">.</span><span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token string">'歼-20战斗机'</span><span class="token punctuation">)</span>
+<span class="token constant">J20</span><span class="token punctuation">.</span><span class="token function">fly</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+<span class="token keyword">var</span> <span class="token constant">B20</span> <span class="token operator">=</span> <span class="token constant">F1</span><span class="token punctuation">.</span><span class="token function">createProduct</span><span class="token punctuation">(</span><span class="token string">'B-20轰炸机'</span><span class="token punctuation">)</span>
+<span class="token constant">B20</span><span class="token punctuation">.</span><span class="token function">fly</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br></div></div><p>工厂模式和抽象工厂模式的区别：</p> <p>工厂模式 主要关注单独的产品实例的创建；
+抽象工厂模式 主要关注产品类簇实例的创建，如果产品类簇只有一个产品，那么这时的抽象工厂模式就退化为工厂模式了；
+根据场景灵活使用即可。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">2020/4/9 上午11:09:57</span></div></footer> <!----> </main></div><div class="global-ui"><!----><div></div></div></div>
+    <script src="/blog/assets/js/app.64f4eb03.js" defer></script><script src="/blog/assets/js/2.359db232.js" defer></script><script src="/blog/assets/js/55.acb290ff.js" defer></script>
+  </body>
+</html>
