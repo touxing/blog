@@ -8,3 +8,8 @@
 * prettier 统一代码风格的插件
 
 * webpack 前端必学打包工具
+
+## 一些常用工具
+
+**@hotsuitor/upload-dist**
+封装好的 nodejs 上传工具，方便前端打包上传 `dist` 目录

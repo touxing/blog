@@ -70,7 +70,9 @@ module.exports = {
             sidebarDepth: 1,
             children: [
               ['/zh/tools/efficient', '效率工具'],
+              ['/zh/tools/prettier', 'prettier代码格式化'],
               ['/zh/tools/site', '有趣的网站'],
+              ['/zh/tools/buildtools', '构建工具'],
               ['/zh/tools/nginx', 'Nginx'],
             ],
           },
