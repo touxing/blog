@@ -1,4 +1,4 @@
-# prettier 代码格式化工具
+# prettier 代码格式化
 > 详情参考官网：https://prettier.io/
 
 ## 实践
@@ -77,3 +77,42 @@ yarn fix
 如果格式化过程中有出错的文件，查看提示，一般会报一些错误，比如：
 格式化 html 文件，会提示，哪里少了一个闭合标签之类的。
 修改好错误后，重新格式化一次，直至没有错误提示，至此，项目风格统一工作完成。
+
+
+---
+### 配合 ESLint 使用
+
+安装
+
+`prettier-eslint-cli` prettier eslint cli 工具
+
+```sh
+yarn add -D prettier-eslint-cli eslint-config-prettier eslint-plugin-prettier
+```
+
+`.eslintrs.sj` 配置
+```js
+{
+  extends: [
+    'eslint-config-prettier' // 配置 prettier 格式化规则
+  ],
+  plugins: [
+    'prettier', // 支持 prettier 格式化
+    'eslint-plugin-prettier' // prettier 按照 eslint 规则格式化需要用到的插件
+  ]
+}
+```
+
+格式化命令
+```sh
+prettier-eslint --write "src/**/*.js" "src/**/*.vue"
+```
+
+配置到 `package.json`
+```json
+{
+  "script": {
+     "format": "prettier-eslint --write \"src/**/*.js\" \"src/**/*.vue\""
+  }
+}
+```
