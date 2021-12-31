@@ -89,3 +89,12 @@ sidebarDepth: 3
 ## 书籍推荐
 
 [《You Don't know JS》](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/get-started/README.md)
+
+
+## nodejs
+
+### [如何写一个cli工具并发布npm包](./nodejs/npm)
+
+## 游戏
+
+### [Phaser3](./phaser)

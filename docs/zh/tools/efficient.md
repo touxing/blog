@@ -11,5 +11,22 @@
 
 ## 一些常用工具
 
-**@hotsuitor/upload-dist**
+
+自己写的小工具
+---
+
+> [如何写一个cli工具并发布npm包](/zh/javascript/nodejs/npm/#如何写一个cli工具并发布npm包)
+
+- **@hotsuitor/upload-dist**
+
 封装好的 nodejs 上传工具，方便前端打包上传 `dist` 目录
+
+- **fast-git-clone**
+一款更快的 git clone GitHub 源码 cli 工具
+> https://www.npmjs.com/package/fast-git-clone
+
+- **@hotsuitor/wxcli**
+
+> https://www.npmjs.com/package/@hotsuitor/wxcli
+
+一款封装了微信开发者工具 开发辅助-命令行调用 的cli工具。 主要是方便使用了 webpack 打包小程序的使用场景。
