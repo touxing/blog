@@ -55,7 +55,7 @@ module.exports = {
               { text: '后端', link: '/zh/backend/' },
             ],
           },
-          { text: '关于我', link: '/zh/about'},
+          // { text: '关于我', link: '/zh/about/'},
           { text: 'GitHub', link: 'https://github.com/touxing', target: '_blank', rel: 'hotsuitor blog' },
         ],
         sidebar: [
