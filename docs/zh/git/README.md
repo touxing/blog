@@ -177,3 +177,39 @@ git checkout 3f6fe4ef function3.js
 Git Describe 能帮你在提交历史中移动了多次以后找到方向；当你用 `git bisect`（一个查找产生 Bug 的提交记录的指令）找到某个提交记录时，或者是当你坐在你那刚刚度假回来的同事的电脑前时， 可能会用到这个命令。
 
 当 `ref` 提交记录上有某个标签时，则只输出标签名称
+
+
+## git svn
+
+git 操作 svn 仓库
+
+> git svn 是Subversion和Git之间变更集的简单管道。它提供Subversion和Git存储库之间的双向变化流。
+
+`git help svn` 查看帮助命令
+
+`git svn help` 查看帮助参数
+
+clone svn repository
+```sh
+git svn clone [-s|--stdlayout 默认标准目录] [-r100:HEAD 指定记录] svn_repository_url
+```
+
+如果 svn 仓库不是标准的（trunk/branches/tags） 目录结构，需要指定参数
+`-T/--trunk=<trunk_dir> -b/--branches=<branches_dir> -t/--tags=<tags_dir>`
+
+如果一个 svn 仓库很多记录，clone 会非常费时。可以指定提交记录 clone
+`-rxxx:HEAD`
+
+正常 git 操作
+git add .
+git commit -m "message"
+
+可选，拉取 svn repository
+```sh
+git svn rebase # => git fetch and git merge
+```
+
+推送更新 svn repository
+```sh
+git svn dcommit [trunk 可选指定分支]
+```
