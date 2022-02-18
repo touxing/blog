@@ -1,0 +1,25 @@
+stages:
+  - build
+  - test
+  - deploy
+
+image: node:lts
+
+pre-job:
+  stage: .pre
+  script:
+    - echo "This job runs in the .pre stage, before all other stages."
+    - apt-get update -qq && apt-get install -y nodejs npm
+    - node -v
+
+build-job:
+  stage: build
+  script:
+    - npm i
+    - npm build
+
+job-test:
+  stage: test
+  script:
+    - curl -f https://get.pnpm.io/v6.16.js | node - add --global pnpm
+    - pnpm -v
