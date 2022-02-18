@@ -79,3 +79,40 @@ jobs:
 
 1. 创建 `.gitlab-ci.yml` 文件
 2. install runner and config runner
+
+#### example
+```yml
+stages:
+   - build
+   - deploy
+
+# build stage
+build_app:
+   image: node:alpine
+   stage: build
+   only:
+      - master
+   script:
+      - npm install
+      - npm run build
+   cache:
+     paths:
+       - node_modules/
+   artifacts:
+      paths:
+         # build folder
+         - dist/
+      expire_in: 1 hour
+
+# production stage
+production:
+   stage: deploy
+   before_script:
+      - mkdir -p ~/.ssh
+      - echo -e "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+      - chmod 600 ~/.ssh/id_rsa
+      - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+   script:
+      - scp -r dist/* username@server-ip-address:/var/www/html/
+```
+> 参考：https://shouts.dev/articles/build-and-auto-deploy-vuejs-app-to-server-using-gitlab-ci-cd
