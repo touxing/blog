@@ -3,20 +3,24 @@ stages:
   - test
   - deploy
 
-image: node:lts
+image: node:14.8.1
 
-pre-job:
-  stage: .pre
-  script:
-    - echo "This job runs in the .pre stage, before all other stages."
-    - apt-get update -qq && apt-get install -y nodejs npm
-    - node -v
+# pre-job:
+#   stage: .pre
+#   script:
+#     - apt-get update -qq && apt-get install -y nodejs npm
+#     - node -v
 
 build-job:
   stage: build
   script:
-    - npm i
-    - npm build
+    - npm install
+    - npm run build
+  # This folder is cached between builds
+  # https://docs.gitlab.com/ee/ci/yaml/index.html#cache
+  cache:
+    paths:
+      - node_modules/
 
 job-test:
   stage: test
