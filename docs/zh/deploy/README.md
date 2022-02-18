@@ -69,3 +69,13 @@ jobs:
 参考：
 [阮一峰老师的博客 《GitHub Actions 入门教程》](http://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 [Github Action 官方教程](https://docs.github.com/en/actions)
+
+
+### GitLab
+
+尝试 GitLab 的 `CI/CD` 功能
+
+准备：
+
+1. 创建 `.gitlab-ci.yml` 文件
+2. install runner and config runner
