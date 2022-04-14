@@ -30,3 +30,9 @@
 > https://www.npmjs.com/package/@hotsuitor/wxcli
 
 一款封装了微信开发者工具 开发辅助-命令行调用 的cli工具。 主要是方便使用了 webpack 打包小程序的使用场景。
+
+### 小程序自动埋点SDK
+
+[小程序自动埋点SDK](https://github.com/touxing/weapp_buried_point_sdk)
+
+实现原理，劫持小程序 `App` `Page` `Component` 对象，代理对象方法，注入配置埋点文件，实现按需配置埋点。
