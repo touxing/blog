@@ -32,6 +32,12 @@ git push [<remote>] [<branch>]
 
 ### cherry-pick(整理提交记录)
 将一些提交复制到当前所在位置（HEAD）下面
+> 有选择地 copy 提交记录到当前分支，在多分支开发的时候非常 方便
+
+```
+git cherry-pick A..A3 # A,A3表示commit hash, 选择 A到A3的提交记录，合并到当前分支，不包含 A 本身
+git cherry-pick A^..A3 # 包含A记录本身
+```
 
 ### 交互式 rebase
 
