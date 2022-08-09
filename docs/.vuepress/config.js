@@ -53,6 +53,7 @@ module.exports = {
                 ],
               },
               { text: '后端', link: '/zh/backend/' },
+              { text: '随笔', link: '/zh/note/' },
             ],
           },
           // { text: '关于我', link: '/zh/about/'},
