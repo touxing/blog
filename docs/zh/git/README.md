@@ -155,6 +155,12 @@ git tag -d v1.2
 git push <remote> :refs/tags/<tagname>
 ```
 
+#### 更新本地远程分支
+
+```bash
+git remote update origin [--prune]
+```
+
 ### 合并单个文件
 假设有这样的需求，基于 `develop` 分支，新建了分支A和分支B，分支A修改了 `function1.js` `tools.js` 文件 分支B修改了 `function2.js` `function3.js` 文件
 现在要紧急上线一个功能，涉及到分支A中的 `tools.js` 文件 和分支B中的 `function3.js` 文件，怎么办，copy，paste?
