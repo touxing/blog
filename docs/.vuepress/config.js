@@ -96,18 +96,47 @@ module.exports = {
   markdown: { lineNumbers: true },
   plugins: [
     '@vuepress/back-to-top',
+    // vssue 评论系统
+    // [
+    //   '@vssue/vuepress-plugin-vssue',
+    //    {
+    //     // 设置 `platform` 而不是 `api`
+    //     platform: 'github-v4',
+    //     // 其他的 Vssue 配置
+    //     owner: 'touxing',
+    //     repo: 'blog',
+    //     clientId: '3e0663df12fcbd8d4365',
+    //     clientSecret: '6e610e5956376615dee72fefa6390da54f42b52c',
+    //   },
+    // ],
+    // gitalk 评论系统
     [
       'vuepress-plugin-comment',
       {
-        choosen: 'valine',
-        // options选项中的所有参数，会传给Valine的配置
+        choosen: 'gitalk',
         options: {
-          el: '#vcomments',
-          appId: 'Db90BbPY9gdrIG1QVLcBgB15-MdYXbMMI',
-          appKey: '22FwueoBtgzrCjrYyjNtiajY'
+          clientID: '3e0663df12fcbd8d4365',
+          clientSecret: '6e610e5956376615dee72fefa6390da54f42b52c',
+          repo: 'blog',
+          owner: 'touxing',
+          admin: ['touxing', '<hotsuitor@qq.com>'],
+          distractionFreeMode: false
         }
       }
-    ]
+    ],
+    // valine 评论插件，不好用
+    // [
+    //   'vuepress-plugin-comment',
+    //   {
+    //     choosen: 'valine',
+    //     // options选项中的所有参数，会传给Valine的配置
+    //     options: {
+    //       el: '#vcomments',
+    //       appId: 'Db90BbPY9gdrIG1QVLcBgB15-MdYXbMMI',
+    //       appKey: '22FwueoBtgzrCjrYyjNtiajY'
+    //     }
+    //   }
+    // ]
   ],
   chainWebpack: (config, isServer) => {
     config.resolve.alias.set('@img', '/blog/img')

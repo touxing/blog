@@ -5,6 +5,7 @@
   "author": "hotsuitor",
   "license": "MIT",
   "scripts": {
+    "postinstall": "patch-package",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "docs:build": "npm run build",
@@ -13,8 +14,14 @@
   "devDependencies": {
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "execa": "^6.0.0",
+    "patch-package": "^6.5.0",
     "svg-url-loader": "^7.1.1",
     "vuepress": "^1.8.2",
     "vuepress-plugin-comment": "^0.7.3"
+  },
+  "dependencies": {
+    "@vssue/api-github-v4": "^1.4.7",
+    "@vssue/vuepress-plugin-vssue": "^1.4.8",
+    "vssue": "^1.4.8"
   }
 }
