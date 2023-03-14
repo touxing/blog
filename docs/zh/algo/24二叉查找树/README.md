@@ -31,4 +31,4 @@ def BST(TreeNode: root, target: int) -> TreeNode:
     root.left = BST(root.left, target)
 ```
 
-<<< ./docs/zh/algo/24二叉查找树/binarySearchTree.js
+@[code](./binarySearchTree.js)

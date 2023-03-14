@@ -3,7 +3,14 @@ home: true
 heroImage: /img/logo-64.png
 heroText: 总想写点什么
 tagline: 不管好与不好
-actionText: 开启记录 →
+actionText: 开启记录
+actions:
+  - text: 开启阅读 →
+    link: /zh/guide/getting-started.html
+    type: primary
+  # - text: 项目简介
+  #   link: /zh/guide/
+  #   type: secondary
 actionLink: /zh/
 features:
 - title: 脑力至上

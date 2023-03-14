@@ -13,4 +13,4 @@
 * 求Top K
 * 求中位数
 
-<<< ./docs/zh/algo/28堆和堆排序/heap.js
+@[code](./heap.js)

@@ -6,17 +6,19 @@
   "license": "MIT",
   "scripts": {
     "postinstall": "patch-package",
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs",
-    "docs:build": "npm run build",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
+    "build": "npm run docs:build",
     "gh-pages-deploy": "node scripts/gh-pages-deploy.mjs"
   },
   "devDependencies": {
+    "@vuepress/client": "2.0.0-beta.61",
     "@vuepress/plugin-back-to-top": "^1.8.2",
     "execa": "^6.0.0",
     "patch-package": "^6.5.0",
     "svg-url-loader": "^7.1.1",
-    "vuepress": "^1.8.2",
+    "vue": "^3.2.47",
+    "vuepress": "2.0.0-beta.61",
     "vuepress-plugin-comment": "^0.7.3"
   },
   "dependencies": {
