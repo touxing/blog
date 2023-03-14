@@ -1,5 +1,7 @@
 import { defineUserConfig, defaultTheme } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
 import { navbarEn, navbarZh, sidebarEn, sidebarZh } from './configs/index.js'
+import { commentPlugin } from 'vuepress-plugin-comment2'
 
 let baseUrl = '/blog/'
 export default defineUserConfig({
@@ -46,7 +48,16 @@ export default defineUserConfig({
     },
   }),
   plugins: [
-    '@vuepress/back-to-top',
+    commentPlugin({
+      provider: 'Giscus',
+      platform: 'github-v4',
+      owner: 'touxing',
+      repo: 'blog',
+      repoId: 'MDEwOlJlcG9zaXRvcnkyNTM3MTI4NDI=',
+      category: 'Announcements',
+      categoryId: 'DIC_kwDODx9Zys4CU3td',
+      theme: 'preferred_color_scheme',
+    }),
     // vssue 评论系统
     // [
     //   '@vssue/vuepress-plugin-vssue',
@@ -61,20 +72,20 @@ export default defineUserConfig({
     //   },
     // ],
     // gitalk 评论系统
-    [
-      'vuepress-plugin-comment',
-      {
-        choosen: 'gitalk',
-        options: {
-          clientID: '3e0663df12fcbd8d4365',
-          clientSecret: '6e610e5956376615dee72fefa6390da54f42b52c',
-          repo: 'blog',
-          owner: 'touxing',
-          admin: ['touxing', '<hotsuitor@qq.com>'],
-          distractionFreeMode: false,
-        },
-      },
-    ],
+    // [
+    //   'vuepress-plugin-comment',
+    //   {
+    //     choosen: 'gitalk',
+    //     options: {
+    //       clientID: '3e0663df12fcbd8d4365',
+    //       clientSecret: '6e610e5956376615dee72fefa6390da54f42b52c',
+    //       repo: 'blog',
+    //       owner: 'touxing',
+    //       admin: ['touxing', '<hotsuitor@qq.com>'],
+    //       distractionFreeMode: false,
+    //     },
+    //   },
+    // ],
     // valine 评论插件，不好用
     // [
     //   'vuepress-plugin-comment',
@@ -89,29 +100,42 @@ export default defineUserConfig({
     //   }
     // ]
   ],
-  chainWebpack: (config, isServer) => {
-    config.resolve.alias.set('@img', '/blog/img')
-    config.module
-      .rule('svg')
-      .test(/\.svg$/)
-      .use('svg-url-loader')
-      .loader('svg-url-loader')
-      .options({
-        limit: 80 * 1024,
-      })
-      .end()
-      .use('file-loader')
-      .loader('file-loader')
-      .end()
-    config.module
-      .rule('image')
-      .test(/\.(png|jpe?g|gif)$/i)
-      .use('file-loader')
-      .loader('file-loader')
-      .options({
-        esModules: false,
-        // name: `${baseUrl}[name].[ext]`
-      })
-      .end()
-  },
+
+  // 已经失效，vuepress2打包工具换成了vite
+  // chainWebpack: (config, isServer) => {
+  //   config.resolve.alias.set('@img', '/blog/img')
+  //   config.module
+  //     .rule('svg')
+  //     .test(/\.svg$/)
+  //     .use('svg-url-loader')
+  //     .loader('svg-url-loader')
+  //     .options({
+  //       limit: 80 * 1024,
+  //     })
+  //     .end()
+  //     .use('file-loader')
+  //     .loader('file-loader')
+  //     .end()
+  //   config.module
+  //     .rule('image')
+  //     .test(/\.(png|jpe?g|gif)$/i)
+  //     .use('file-loader')
+  //     .loader('file-loader')
+  //     .options({
+  //       esModules: false,
+  //       // name: `${baseUrl}[name].[ext]`
+  //     })
+  //     .end()
+  // },
+  bundler: viteBundler({
+
+    viteOptions: {
+      build: {
+        rollupOptions: {
+          // external: '@vuepress/theme-default/layouts/Layout.vue'
+        }
+      }
+    },
+    vuePluginOptions: {},
+  }),
 })

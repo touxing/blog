@@ -18,7 +18,7 @@ df
 
 
 <div>
-<style scoped>
+<component is="style" scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -30,7 +30,7 @@ df
     .dataframe thead th {
         text-align: right;
     }
-</style>
+</component>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -68,7 +68,7 @@ df.rename(index={0:'张三', 1: '李四'})
 
 
 <div>
-<style scoped>
+<component is="style" scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -80,7 +80,7 @@ df.rename(index={0:'张三', 1: '李四'})
     .dataframe thead th {
         text-align: right;
     }
-</style>
+</component>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -118,7 +118,7 @@ df
 
 
 <div>
-<style scoped>
+<component is="style" scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -130,7 +130,7 @@ df
     .dataframe thead th {
         text-align: right;
     }
-</style>
+</component>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -169,7 +169,7 @@ df
 
 
 <div>
-<style scoped>
+<component is="style" scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -181,7 +181,7 @@ df
     .dataframe thead th {
         text-align: right;
     }
-</style>
+</component>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -246,7 +246,7 @@ df2
 
 
 <div>
-<style scoped>
+<component is="style" scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
@@ -258,7 +258,7 @@ df2
     .dataframe thead th {
         text-align: right;
     }
-</style>
+</component>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -319,5 +319,3 @@ df2.describe
     2  二班  王五  92
     3  二班  赵六  54
     4  三班  小明  63>
-
-
