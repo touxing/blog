@@ -1,0 +1,1 @@
+import{_ as t,W as a,X as c,Y as e,Z as n}from"./framework-3337e352.js";const r={},s=e("h1",{id:"_03闭包与高阶函数",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#_03闭包与高阶函数","aria-hidden":"true"},"#"),n(" 03闭包与高阶函数")],-1),_=[s];function o(d,i){return a(),c("div",null,_)}const l=t(r,[["render",o],["__file","index.html.vue"]]);export{l as default};
