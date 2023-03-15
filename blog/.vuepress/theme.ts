@@ -82,6 +82,8 @@ export default hopeTheme({
 
   encrypt: {
     config: {
+      "/about/": ["ab1234"],
+      "/TODO/todo_list.html": ["ab1234"],
       "/demo/encrypt.html": ["ab1234"],
       "/en/demo/encrypt.html": ["ab1234"],
     },

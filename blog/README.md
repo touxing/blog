@@ -3,7 +3,7 @@ home: true
 layout: BlogHome
 icon: home
 title: 主页
-heroImage: /study.png
+heroImage: /study.svg
 heroText: 总想写点什么
 heroFullScreen: true
 tagline: 你自己愿意躺下，没有任何人能够扶你起来——列夫·托尔斯泰
