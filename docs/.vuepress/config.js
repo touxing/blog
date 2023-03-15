@@ -3,7 +3,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { navbarEn, navbarZh, sidebarEn, sidebarZh } from './configs/index.js'
 import { commentPlugin } from 'vuepress-plugin-comment2'
 
-let baseUrl = '/blog/'
+let baseUrl = '/docs/'
 export default defineUserConfig({
   base: baseUrl,
   title: '十年磨一剑',
