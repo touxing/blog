@@ -1,0 +1,1 @@
+import{_ as t,X as a,Y as c,Z as e,$ as n}from"./framework-441f7d77.js";const r={},s=e("h1",{id:"mvc、mvp、mvvm模式",tabindex:"-1"},[e("a",{class:"header-anchor",href:"#mvc、mvp、mvvm模式","aria-hidden":"true"},"#"),n(" MVC、MVP、MVVM模式")],-1),o=[s];function _(d,m){return a(),c("div",null,o)}const h=t(r,[["render",_],["__file","index.html.vue"]]);export{h as default};
