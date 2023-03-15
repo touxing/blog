@@ -93,7 +93,7 @@ export default hopeTheme({
     comment: {
       //  You should generate and use your own comment service
       provider: "Giscus",
-      repo: 'blog',
+      repo: 'touxing/blog',
       repoId: 'MDEwOlJlcG9zaXRvcnkyNTM3MTI4NDI=',
       category: 'Announcements',
       categoryId: 'DIC_kwDODx9Zys4CU3td',
