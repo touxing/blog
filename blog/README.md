@@ -2,47 +2,47 @@
 home: true
 layout: BlogHome
 icon: home
-title: Blog Home
-heroImage: /logo.svg
-heroText: The name of your blog
-tagline: You can put your slogan here
+title: 主页
+heroImage: /study.png
+heroText: 总想写点什么
 heroFullScreen: true
+tagline: 你自己愿意躺下，没有任何人能够扶你起来——列夫·托尔斯泰
 projects:
   - icon: project
-    name: project name
-    desc: project detailed description
-    link: https://your.project.link
+    name: 数据可视化
+    desc: 中国地图数据可视化，3级下钻
+    link: https://github.com/touxing/echarts3-chinese-map-drill-down
 
   - icon: link
-    name: link name
-    desc: link detailed description
-    link: https://link.address
+    name: 小程序工程化
+    desc: webpack打包原生微信小程序
+    link: https://github.com/touxing/miniprogram-webpack
 
-  - icon: book
-    name: book name
-    desc: Detailed description of the book
-    link: https://link.to.your.book
+  # - icon: book
+  #   name: 书籍名称
+  #   desc: 书籍详细描述
+  #   link: https://你的书籍链接
 
-  - icon: article
-    name: article name
-    desc: Detailed description of the article
-    link: https://link.to.your.article
+  - icon: link
+    name: CSDN博客
+    desc: 我的CSDN博客
+    link: https://hotsuitor.blog.csdn.net
 
-  - icon: friend
-    name: friend name
-    desc: Detailed description of friend
-    link: https://link.to.your.friend
+  # - icon: friend
+  #   name: 伙伴名称
+  #   desc: 伙伴详细介绍
+  #   link: https://你的伙伴链接
 
   - icon: /logo.svg
-    name: custom item
-    desc: Detailed description of this custom item
-    link: https://link.to.your.friend
+    name: akutil
+    desc: js常用功能封装
+    link: https://github.com/touxing/akutil
 
-footer: customize your footer text
+footer: Copyright © 2020-present 舒馨博客
 ---
 
-This is a blog home page demo.
+这是一个博客主页的案例。
 
-To use this layout, you should set both `layout: BlogHome` and `home: true` in the page front matter.
+要使用此布局，你应该在页面前端设置 `layout: BlogHome` 和 `home: true`。
 
-For related configuration docs, please see [blog homepage](https://theme-hope.vuejs.press/guide/blog/home/).
+相关配置文档请见 [博客主页](https://theme-hope.vuejs.press/zh/guide/blog/home/)。
