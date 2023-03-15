@@ -2,6 +2,7 @@
 title: 部署
 date: 2022-11-25
 icon: customize
+order: 6
 category:
   - 部署
 tag:

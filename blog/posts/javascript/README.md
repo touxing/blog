@@ -2,6 +2,7 @@
 title: javascript
 date: 2020-11-23
 icon: javascript
+order: 1
 category:
   - javascript
 tag:
@@ -23,7 +24,7 @@ star: true
 为了方便理解，我们需要了解几个基础概念，每个HTML元素都有下列属性
 
 
-|      |      |      |
+| 元素内尺寸 |元素外尺寸|滚动尺寸|
 | ---- | ---- | ---- |
 |offsetWidth|clientWidth|scrollWidth|
 |offsetHeight|clientHeight|scrollHeight|

@@ -33,7 +33,7 @@ export const zhNavbar = navbar([
       {
         text: "工具",
         icon: "tool",
-        prefix: "",
+        // prefix: "",
         children: [
           {
             text: "git",

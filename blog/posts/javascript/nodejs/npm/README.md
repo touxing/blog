@@ -1,5 +1,7 @@
 ---
+title: 发布一个npm包
 date: 2020-11-23
+icon: nodejs
 category:
   - Nodejs
 tag:
@@ -16,7 +18,7 @@ tag:
 6. `npm publish` 提交到 npm 仓库
 
 
-> 写的一些[小工具](/zh/tools/efficient.md#自己写的小工具)
+> 写的一些[小工具](/posts/tools/efficient.md#自己写的小工具)
 
 **遇到问题**
 
