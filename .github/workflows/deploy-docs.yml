@@ -22,7 +22,7 @@ jobs:
           NODE_OPTIONS: '--max_old_space_size=4096'
         run: |
           yarn
-          yarn docs:build
+          yarn old:build
 
       # 部署到 GitHub Pages
       - name: Deploy

@@ -8,7 +8,8 @@
     "postinstall": "patch-package",
     "docs:dev": "vuepress dev blog",
     "docs:build": "vuepress build blog",
-    "build": "npm run docs:build",
+    "old:dev": "vuepress dev docs",
+    "old:build": "vuepress build docs",
     "gh-pages-deploy": "node scripts/gh-pages-deploy.mjs",
     "docs:clean-dev": "vuepress dev blog --clean-cache",
     "docs:update-package": "pnpm dlx vp-update"
