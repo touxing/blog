@@ -48,7 +48,7 @@ export const zhNavbar = navbar([
           {
             text: "效率",
             icon: "strong",
-            link: "tools/efficent",
+            link: "tools/efficient",
           },
           {
             text: "Nginx",
