@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>命令模式</title>
+  </head>
+  <body>
+    <script>
+      let canvas = document.getElementById('my-canvas')
+      let canvasWidth = 400
+      let canvasHeight = 600
+      let canvasStep = 40 // 动作步长
+      canvas.width = canvasWidth
+      canvas.height = canvasHeight
+
+      let btnUp = document.getElementById('btn-up')
+      let btnDown = document.getElementById('btn-down')
+      let btnLeft = document.getElementById('btn-left')
+      let btnRight = document.getElementById('btn-right')
+
+      // 移动对象类
+      class Role {
+        constructor(x, y, imgSrc) {
+          this.x = x
+          this.y = y
+          this.canvas = document.getElementById('my-canvas')
+          this.ctx = canvas.getContext('2d')
+          this.img = new Image()
+          this.img.style.width = canvasStep
+          this.img.style.height = canvasStep
+          this.img.src = imgSrc
+          this.img.onload = () => {
+            this.ctx.drawImage(this.img, this.x, this.y, canvasStep, canvasStep)
+            this.move(0, 0)
+          }
+
+          move(x, y) {
+            this.ctx.clearRect(this.x, this.y, canvasStep, canvasStep)
+            this.x += x
+            this.y += y
+            this.ctx.drawImage(this.img, this.x, canvasStep, canvasStep)
+          }
+        }
+      }
+
+      // 向上移动命令类
+      class MoveUpCommand {
+        constructor(receiver) {
+          this.receiver = receiver
+        }
+      }
+      ;
+    </script>
+  </body>
+</html>

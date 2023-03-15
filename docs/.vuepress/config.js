@@ -50,8 +50,6 @@ export default defineUserConfig({
   plugins: [
     commentPlugin({
       provider: 'Giscus',
-      platform: 'github-v4',
-      owner: 'touxing',
       repo: 'blog',
       repoId: 'MDEwOlJlcG9zaXRvcnkyNTM3MTI4NDI=',
       category: 'Announcements',
