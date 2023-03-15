@@ -2,7 +2,7 @@
 date: 2020-11-23
 icon: article
 category:
-  - js
+  - javascript
 tag:
   - 闭包
   - 高阶函数

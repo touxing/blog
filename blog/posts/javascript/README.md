@@ -1,5 +1,5 @@
 ---
-shortTitle: javascript
+title: javascript
 date: 2020-11-23
 icon: javascript
 category:
@@ -12,7 +12,7 @@ sticky: true
 star: true
 ---
 
-# 介绍
+# javascript
 
 ## 基础知识
 

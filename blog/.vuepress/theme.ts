@@ -23,11 +23,11 @@ export default hopeTheme({
 
   blog: {
     medias: {
-      Email: "hotsuitor@qq.com",
+      Email: "mailto:hotsuitor@qq.com",
       Gitee: "https://gitee.com/hotsuitor",
       GitHub: "https://github.com/touxing",
-      Gmail: "newbiecen@gmail.com",
-      Wechat: "https://example.com",
+      Gmail: "mailto:newbiecen@gmail.com",
+      Wechat: "https://imgse.com/i/pp3pqR1",
       Weibo: "https://weibo.com/hotsuitor",
     },
   },
@@ -70,7 +70,7 @@ export default hopeTheme({
 
       blog: {
         description: "一个前端开发者",
-        intro: "/zh/intro.html",
+        intro: "/intro.html",
       },
 
       // page meta

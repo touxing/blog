@@ -1,7 +1,7 @@
 ---
 date: 2020-11-23
 category:
-  - js
+  - javascript
 tag:
   - js
   - es6
