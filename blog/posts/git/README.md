@@ -1,12 +1,13 @@
 ---
 date: 2020-11-15
 icon: git
-order: 7
 category:
   - 工具
 tag:
   - git
   - 版本控制
+dir:
+  order: 4
 ---
 
 # git 基础教程

@@ -2,7 +2,6 @@
 title: javascript
 date: 2020-11-23
 icon: javascript
-order: 1
 category:
   - javascript
 tag:
@@ -11,6 +10,8 @@ tag:
 sticky: true
 # 此页面会出现在文章收藏中
 star: true
+dir:
+  order: 1
 ---
 
 # javascript

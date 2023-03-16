@@ -2,12 +2,13 @@
 title: 算法
 date: 2020-03-05
 icon: structure
-order: 4
 category:
   - 算法
 tag:
   - 算法
   - algo
+dir:
+  order: 4
 ---
 # 算法
 > 算法是内功，唯有内功深厚，才能称霸“江湖” 实力派

@@ -1,12 +1,13 @@
 ---
 date: 2022-11-25
 icon: css
-order: 2
 category:
   - CSS
 tag:
   - CSS
   - CSS3
+dir:
+  order: 2
 ---
 # css && css3
 

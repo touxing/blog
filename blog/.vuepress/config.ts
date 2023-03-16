@@ -22,9 +22,9 @@ export default defineUserConfig({
 
   plugins: [
     docsearchPlugin({
-      appId: 'R2IYF7ETH7',
-      apiKey: '599cec31baffa4868cae4e79f180729b',
-      indexName: 'docsearch',
+      appId: 'EBB6LLQBXP',
+      apiKey: 'ff14ccb784738b91fd698d8d9a7be1ce',
+      indexName: 'touxingio',
     }),
   ]
 

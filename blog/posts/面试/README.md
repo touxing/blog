@@ -2,11 +2,12 @@
 title: 常见面试题
 date: 2020-11-15
 icon: exercise
-order: 8
 category:
   - 面试
 tag:
   - 面试
+dir:
+  order: 8
 ---
 
 ## 原型
