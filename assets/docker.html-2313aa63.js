@@ -1,0 +1,25 @@
+import{_ as e,X as a,Y as s,a0 as n}from"./framework-127c059f.js";const i={},d=n(`<h1 id="docker" tabindex="-1"><a class="header-anchor" href="#docker" aria-hidden="true">#</a> Docker</h1><h2 id="安装" tabindex="-1"><a class="header-anchor" href="#安装" aria-hidden="true">#</a> 安装</h2><h2 id="启动docker" tabindex="-1"><a class="header-anchor" href="#启动docker" aria-hidden="true">#</a> 启动docker</h2><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">docker</span> create <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>
+<span class="token function">docker</span> start <span class="token operator">&lt;</span>name<span class="token operator">&gt;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text line-numbers-mode" data-ext="text"><pre class="language-text"><code>docker run &lt;image_name&gt;
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>学会help</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">docker</span> <span class="token parameter variable">--help</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><h2 id="镜像" tabindex="-1"><a class="header-anchor" href="#镜像" aria-hidden="true">#</a> 镜像</h2><p>拉取仓库的镜像</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">git</span> pull <span class="token operator">&lt;</span>image_name<span class="token operator">&gt;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>通过 <code>Dockerfile</code> 打包镜像</p><blockquote><p>这里直接打包一个包含<code>node_modules</code>的镜像 因为我只需要运行访问，所以这样操作，避免国内 <code>npm install</code> 遇到的报错问题 <code>vim Dockerfile</code></p></blockquote><div class="language-Dockerfile line-numbers-mode" data-ext="Dockerfile"><pre class="language-Dockerfile"><code>FROM node:lts # 基于 node 容器 :&lt;标签&gt; 版本
+# 构建时运行的命令
+RUN alias cnpm=&quot;npm --registry=https://registry.npm.taobao.org \\
+        --cache=$HOME/.npm/.cache/cnpm \\
+        --disturl=https://npm.taobao.org/dist \\
+        --userconfig=$HOME/.cnpmrc&quot;
+# COPY package*.json ./project/s_h5 # 复制包信息文件，需要再打包是安装依赖
+# RUN npm install
+COPY . ./project/s_h5
+EXPOSE 8009 # 暴露的端口
+# 启动容器时执行的命令，如果有多条只执行最后一条，多条写成 &amp;&amp; 形式
+CMD cd ./project/s_h5 &amp;&amp; npm run start
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>忽略要打包的文件 <code>vim .dockerignore</code></p><div class="language-dockerignore line-numbers-mode" data-ext="dockerignore"><pre class="language-dockerignore"><code>#node_modules
+npm_debug.log
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>执行打包，在当前目录打包镜像</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">docker</span> build <span class="token parameter variable">-t</span> image_name:v1 <span class="token builtin class-name">.</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>查看镜像</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">docker</span> images <span class="token comment"># or docker image ls</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div><p>导出镜像</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">docker</span> save <span class="token parameter variable">-o</span> out_image_name <span class="token operator">&lt;</span>image:tag<span class="token operator">&gt;</span>
+<span class="token comment"># eg: docker save -o image_test.tar nginx:1.2</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>导入镜像</p><div class="language-bash line-numbers-mode" data-ext="sh"><pre class="language-bash"><code><span class="token function">docker</span> load <span class="token parameter variable">-i</span> <span class="token operator">&lt;</span>资源路径<span class="token operator">&gt;</span>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div></div></div>`,23),r=[d];function l(c,o){return a(),s("div",null,r)}const p=e(i,[["render",l],["__file","docker.html.vue"]]);export{p as default};
