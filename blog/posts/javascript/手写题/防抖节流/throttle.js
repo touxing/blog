@@ -6,15 +6,34 @@
  * Modified By: hotsuitor (hotsuitor@qq.com>)
  */
 
-function throttle(fn, wait) {
-  let timer = null
-  return function (...args) {
-    if (timer) {
-      clearTimeout(timer)
+function throttle(fn, wait = 300, imediate = false) {
+  let inThrottle = !immediate,
+    lastFn,
+    lastTime
+  return function () {
+    const context = this,
+      args = arguments
+    if (!inThrottle) {
+      fn.apply(context, args)
+      lastTime = Date.now()
+      inThrottle = true
+    } else {
+      clearTimeout(lastFn)
+      lastFn = setTimeout(function () {
+        if (Date.now() - lastTime > wait) {
+          fn.apply(context, args)
+          lastTime = Date.now()
+        }
+      }, Math.max(wait - (Date.now() - lastTime), 0))
     }
-    timer = setTimeout(() => {
-      fn.apply(this, args)
-      timer = null
-    }, wait)
   }
 }
+
+// Example
+window.addEventListener(
+  'resize',
+  throttle(function(evt) {
+    console.log(window.innerWidth);
+    console.log(window.innerHeight);
+  }, 250)
+); // Will log the window dimensions at most every 250ms
