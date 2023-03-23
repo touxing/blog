@@ -99,6 +99,12 @@ export default hopeTheme({
       categoryId: 'DIC_kwDODx9Zys4CU3td',
     },
 
+    // 代码主题配置
+    prismjs: {
+      light: 'gruvbox-light',
+      dark: 'gruvbox-dark',
+    },
+
     // all features are enabled for demo, only preserve features you need here
     mdEnhance: {
       align: true,
