@@ -6,6 +6,19 @@
  * Modified By: hotsuitor (hotsuitor@qq.com>)
  */
 
+
+/** 简单版本 */
+function throttle0(fn, wait=300) {
+  let lastTime = Date.now()
+  return (...args) => {
+    const now = Date.now()
+    if(now - lastTime > wait) {
+      fn.apply(this, args)
+      lastTime = now
+    }
+  }
+}
+
 function throttle(fn, wait = 300, imediate = false) {
   let inThrottle = !immediate,
     lastFn,
