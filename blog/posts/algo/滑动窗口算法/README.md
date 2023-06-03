@@ -9,7 +9,40 @@ tag:
   - algo
   - 滑动窗口算法
 ---
-## 滑动窗口算法
+
+
+## 尺寸法
+
+在区间操作时，用两个指针同时遍历区间，从而实现高效操作。
+限制：i < j, 一般用于区间操作
+
+可以把需要两重遍历的操作 转变为一重循环操作
+模板
+```js
+for(let i = 0, j = n-1; i < j; i++,j--) {
+  // 遍历操作
+}
+```
+
+while实现模板
+```js
+let s = 'xxx'
+let n = s.length
+let i = 0, j=n-1
+while(i<j) {
+  // do something
+  i++,j-- // 移动指针
+}
+```
+
+判断是否回文字符串
+@[code](./code/回文字符串.py)
+
+### 反向扫描
+
+### 同向扫描
+
+#### 滑动窗口算法
 
 > 维护一个窗口大小，左边向右滑，缩小窗口，右边向优化，增大窗口，滑来滑去，找到最佳答案
 
@@ -65,4 +98,4 @@ void slidingWindow(string s, string t) {
 ```
 LeetCode 76.查找最小覆盖子串 刷题
 
-@[code](./slideWindow.py)
+@[code](./code/slideWindow.py)
