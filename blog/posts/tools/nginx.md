@@ -163,8 +163,9 @@ server {
     try_files $uri $uri/ /index.html;
   }
   location ~ (/api|/signalr) {
-    add_header Access-Control-Allow-Origin *;
-    add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,OPTIONS;
+    # 代理转发请求不需要设置跨域头，会导致不同源的请求出现跨域问题
+    # add_header Access-Control-Allow-Origin *;
+    # add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,OPTIONS;
     # 自定义响应头，start 方便查看代理是否成功
     add_header Proxy-Server-Ip $upstream_addr;
     add_header Proxy-Server-Code $upstream_status;
