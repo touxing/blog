@@ -125,6 +125,160 @@ server  {
 
 在 Nginx 反向代理是，会通过 location 功能匹配指定的 URI，然后把接收到的符合匹配 URI的请求通过 proxy_pass 转移给之前定义好的 upstream 节点池
 
+#### 2.3 使用代理
+
+示例配置文件：
+```nginx
+upstream backend {
+  server 1.1.1.xxx:8080;
+}
+upstream websocket {
+  server 1.1.1.xxx:8090;
+}
+
+# 设置请求协议升级
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  # 'websocket' upgrade;
+  '' close;
+}
+
+# 代理的 server_name 是 127.0.0.1 通过 localhost 访问，代理是不生效的
+# 配置多个 server_name 也不生效，目前不清楚是什么问题导致
+# 网上资料显示 localhost 127.0.0.1异同 :
+# localhost 是“本地”，请求不经过网卡
+# 127.0.0.1 是“本机”，请求经过网卡
+# eg:
+# server_name 127.0.0.1 localhost; # access localhost not work
+server {
+  listen 8081;
+  server_name 127.0.0.1;
+
+  #charset koi8-r;
+
+  #access_log  logs/host.access.log  main;
+  location / {
+    root D:\\work\\project\\xxx\\dist;
+    index index.html index.htm;
+    try_files $uri $uri/ /index.html;
+  }
+  location ~ (/api|/signalr) {
+    add_header Access-Control-Allow-Origin *;
+    add_header Access-Control-Allow-Methods GET,POST,PUT,DELETE,OPTIONS;
+    # 自定义响应头，start 方便查看代理是否成功
+    add_header Proxy-Server-Ip $upstream_addr;
+    add_header Proxy-Server-Code $upstream_status;
+    add_header Proxy-Server-Cache-Status $upstream_cache_status;
+    # 自定义请求头 end
+
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-NginX-Proxy true;
+    # 代理 websocket 需要自动 upgrade 协议 start
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    # 代理 websocket 需要自动 upgrade 协议 end
+    # rewrite ^.+/api/?(.*)$ $1 break;
+    proxy_pass http://backend;
+  }
+
+  # location ^~ /ws {
+  #   proxy_pass http://websocket;
+  #   proxy_http_version 1.1;
+  #   proxy_set_header Upgrade $http_upgrade;
+  #   proxy_set_header Connection "upgrade";
+  # }
+
+  #error_page  404              /404.html;
+  # redirect server error pages to the static page /50x.html
+  #
+  error_page 500 502 503 504 /50x.html;
+  location = /50x.html {
+    root html;
+  }
+
+  # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+  #
+  #location ~ \.php$ {
+  #    proxy_pass   http://127.0.0.1;
+  #}
+
+  # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+  #
+  #location ~ \.php$ {
+  #    root           html;
+  #    fastcgi_pass   127.0.0.1:9000;
+  #    fastcgi_index  index.php;
+  #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+  #    include        fastcgi_params;
+  #}
+  # deny access to .htaccess files, if Apache's document root
+  # concurs with nginx's one
+  #
+  #location ~ /\.ht {
+  #    deny  all;
+  #}
+}
+
+# 一个web服务，有多个后端服务，请求不同的端口，代理需要监听多个端口
+# 分别配置代理转发规则
+server {
+  listen 8090;
+  server_name 127.0.0.1;
+
+  #charset koi8-r;
+
+  #access_log  logs/host.access.log  main;
+  # location / {
+  #   root D:\\work\\project\\visionnav_scene\\dist;
+  #   index index.html index.htm;
+  #   try_files $uri $uri/ /index.html;
+  # }
+  location / {
+    add_header Proxy-Server-Ip $upstream_addr;
+    add_header Proxy-Server-Code $upstream_status;
+    add_header Proxy-Server-Cache-Status $upstream_cache_status;
+
+    proxy_pass http://websocket;
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+  }
+
+  #error_page  404              /404.html;
+
+  # redirect server error pages to the static page /50x.html
+  #
+  error_page 500 502 503 504 /50x.html;
+  location = /50x.html {
+    root html;
+  }
+
+  # proxy the PHP scripts to Apache listening on 127.0.0.1:80
+  #
+  #location ~ \.php$ {
+  #    proxy_pass   http://127.0.0.1;
+  #}
+
+  # pass the PHP scripts to FastCGI server listening on 127.0.0.1:9000
+  #
+  #location ~ \.php$ {
+  #    root           html;
+  #    fastcgi_pass   127.0.0.1:9000;
+  #    fastcgi_index  index.php;
+  #    fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+  #    include        fastcgi_params;
+  #}
+  # deny access to .htaccess files, if Apache's document root
+  # concurs with nginx's one
+  #
+  #location ~ /\.ht {
+  #    deny  all;
+  #}
+}
+```
+
 ### 3.Https 配置
 
 > Nginx 常用来配置Https认证，主要有两个步骤：签署第三方可信任的 SSL 证书 和 配置 HTTPS
