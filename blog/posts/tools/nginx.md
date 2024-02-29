@@ -232,7 +232,7 @@ server {
 
   #access_log  logs/host.access.log  main;
   # location / {
-  #   root D:\\work\\project\\visionnav_scene\\dist;
+  #   root D:\\work\\project\\xxx\\dist;
   #   index index.html index.htm;
   #   try_files $uri $uri/ /index.html;
   # }
@@ -310,6 +310,38 @@ server {
 ### 4.常用的配置
 
 > 除了上述的这些，前端还可以用Nginx做些什么，多着呢～下面依依给你讲
+
+##### root
+指定静态资源目录位置，它可以写在 `http`、`servr`、`location` 块等配置中。
+
+`root` 与 `alias` 的区别主要在于 Nginx 如何解释 `location` 后面的路径的 URI，这会使两者分别以不同的方式将请求映射到服务器文件上。具体来看：
+
+`root` 的处理结果是：`root` 路径 + `location` 路径
+`alias` 的处理结果是：使用 `alias` 路径替换 `location` 路径
+
+```nginx
+root path;
+# 例如
+location /image {
+  root /opt/nginx/static;
+}
+```
+当用户访问 `www.test.com/image/1.png` 时，实际在服务器找的路径是 `/opt/nginx/static/image/1.png`。
+
+另一个例子：
+```nginx
+server {
+  listen        9001;
+  server_name   localhost;
+  location /hello {
+    root        /usr/local/var/www;
+  }
+}
+```
+在请求 `http://localhost:9001/hello` 时，服务器返回的路径地址应该是 `/usr/local/var/www/hello/index.html`。
+
+注意：`root` 会将定义路径与 `URI` 叠加，`alias` 则只取定义路径。
+> 路径结尾的 `/` 可填写可不填，测试效果一样。根据实验结果和上面的替换原则可知，nginx会自动补全路径
 
 #### 4.1 IP白名单
 
