@@ -2,7 +2,6 @@
 date: 2024-10-10
 icon: code
 category:
-  - code
   - source code
 tag:
   - source code
